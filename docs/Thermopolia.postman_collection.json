@@ -29,14 +29,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/Recipes/1",
+					"raw": "localhost:5000/Recipes/recipe_dd729c1820efd48b28de6ff70d2d0926",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"Recipes",
-						"1"
+						"recipe_dd729c1820efd48b28de6ff70d2d0926"
 					]
 				}
 			},
