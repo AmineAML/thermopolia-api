@@ -25,7 +25,7 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<User[]> GetTenRecipes()
+        public async Task<Recipe[]> GetTenRecipes()
         {
             try
             {
@@ -49,8 +49,8 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<User> GetRecipeById(int id)
+        [HttpGet("{id}")]
+        public async Task<Recipe> GetRecipeById(string id)
         {
             try
             {

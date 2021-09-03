@@ -27,15 +27,16 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
-            services.AddHttpClient<IRecipesService, RecipesService>(c => 
-            {
-                c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com");
-            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api", Version = "v1" });
+            });
+            services.AddHttpClient<IRecipesService, RecipesService>(c => 
+            {
+                c.BaseAddress = new Uri($"https://api.edamam.com/api/recipes/");
+
+                c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
         }
 
