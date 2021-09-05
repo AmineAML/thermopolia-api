@@ -1,20 +1,19 @@
-using System;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using api.Models;
 using Microsoft.Extensions.Configuration;
+using System.Linq;
 
 namespace api.Services
 {
-    public interface IRecipesService
+    public interface IDrinksService
     {
-        Task<Recipe[]> GetTenRecipes();
-        Task<Recipe> GetRecipeById(string id);
+        Task<Recipe[]> GetTenDrinks();
+        Task<Recipe> GetDrinkById(string id);
     }
 
-    public class RecipesService : IRecipesService
+    public class DrinksService : IDrinksService
     {
         private HttpClient _httpClient;
 
@@ -26,7 +25,7 @@ namespace api.Services
 
         public IConfiguration Configuration { get; }
 
-        public RecipesService(HttpClient httpClient, IConfiguration configuration)
+        public DrinksService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
 
@@ -36,10 +35,10 @@ namespace api.Services
 
             _appKey = Configuration["RecipesSearchAPI:AppKey"];
 
-            _ingredientOfTheWeek = "tuna";
+            _ingredientOfTheWeek = "orange";
         }
 
-        public async Task<Recipe[]> GetTenRecipes()
+        public async Task<Recipe[]> GetTenDrinks()
         {
             string APIURL = $"v2?type=public&q={_ingredientOfTheWeek}&app_id={_appId}&app_key={_appKey}&ingr=10&health=alcohol-free&health=pork-free&dishType=Main%20course&dishType=Salad&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&time=20&imageSize=REGULAR&random=true&field=uri&field=label&field=image&field=url&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=source";
 
@@ -50,14 +49,14 @@ namespace api.Services
             return recipes;
         }
 
-        public async Task<Recipe> GetRecipeById(string id)
+        public async Task<Recipe> GetDrinkById(string id)
         {
             string APIURL = $"v2/{id}?type=public&app_id={_appId}&app_key={_appKey}";
 
             var res = await _httpClient.GetFromJsonAsync<RecipeData>(APIURL);
 
             var recipe = res.recipe;
-            
+
             return recipe;
         }
     }

@@ -2,6 +2,11 @@ using System;
 
 namespace api
 {
+    public class RecipeData
+    {
+        public Recipe recipe { get; set; }
+    }
+    
     public class Recipe
     {
         public string uri { get; set; }

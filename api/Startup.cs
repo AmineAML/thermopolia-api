@@ -38,6 +38,12 @@ namespace api
 
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
+            services.AddHttpClient<IDrinksService, DrinksService>(c => 
+            {
+                c.BaseAddress = new Uri($"https://api.edamam.com/api/recipes/");
+
+                c.DefaultRequestHeaders.Add("Accept", "application/json");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

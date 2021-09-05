@@ -11,13 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/Recipes",
+					"raw": "localhost:5000/Recipes/foods",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						"Recipes"
+						"Recipes",
+						"foods"
 					]
 				}
 			},
@@ -29,14 +30,54 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/Recipes/recipe_dd729c1820efd48b28de6ff70d2d0926",
+					"raw": "localhost:5000/Recipes/foods/recipe_04de2b57dfbdaeca0ff1b591c5102482",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"Recipes",
-						"recipe_dd729c1820efd48b28de6ff70d2d0926"
+						"foods",
+						"recipe_04de2b57dfbdaeca0ff1b591c5102482"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Random drinks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/Recipes/drinks",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"Recipes",
+						"drinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drink by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/Recipes/drinks/recipe_1d8d3f40b278fa3e49ed75eed79366e5",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"Recipes",
+						"drinks",
+						"recipe_1d8d3f40b278fa3e49ed75eed79366e5"
 					]
 				}
 			},

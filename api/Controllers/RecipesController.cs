@@ -18,13 +18,16 @@ namespace api.Controllers
 
         public readonly IRecipesService _recipesService;
 
-        public RecipesController(ILogger<RecipesController> logger, IRecipesService recipesService)
+        public readonly IDrinksService _drinksService;
+
+        public RecipesController(ILogger<RecipesController> logger, IRecipesService recipesService, IDrinksService drinksService)
         {
             _logger = logger;
             _recipesService = recipesService;
+            _drinksService = drinksService;
         }
 
-        [HttpGet]
+        [HttpGet("foods")]
         public async Task<Recipe[]> GetTenRecipes()
         {
             try
@@ -40,7 +43,7 @@ namespace api.Controllers
             }
 
             return null;
-            
+
             // if (!res.IsSuccessStatusCode)
             // {
             //     throw new Exception("Error");
@@ -49,12 +52,61 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("foods/{id}")]
         public async Task<Recipe> GetRecipeById(string id)
         {
             try
             {
                 var res = await _recipesService.GetRecipeById(id);
+
+                return res;
+            }
+            catch (HttpRequestException)
+            {
+                Console.WriteLine("Error");
+            }
+
+            return null;
+
+            // if (!res.IsSuccessStatusCode)
+            // {
+            //     throw new Exception("Error");
+            // }
+
+            // var content = await res.Content
+        }
+
+        [HttpGet("drinks")]
+        public async Task<Recipe[]> GetTenDrinks()
+        {
+            try
+            {
+                var res = await _drinksService.GetTenDrinks();
+
+                return res;
+
+            }
+            catch (HttpRequestException)
+            {
+                Console.WriteLine("Errro");
+            }
+
+            return null;
+
+            // if (!res.IsSuccessStatusCode)
+            // {
+            //     throw new Exception("Error");
+            // }
+
+            // var content = await res.Content
+        }
+
+        [HttpGet("drinks/{id}")]
+        public async Task<Recipe> GetDrinksById(string id)
+        {
+            try
+            {
+                var res = await _drinksService.GetDrinkById(id);
 
                 return res;
             }
