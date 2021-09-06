@@ -1,118 +1,1075 @@
 {
     "diets": [
         {
-            "name": "",
+            "name": "Buddhist diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Hindu and Jain diets",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Islamic dietary laws",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "I-tal",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Kosher diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Seventh-day Adventist",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Word of Wisdom",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Remba/Lemba diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Belief-based diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "5:2 diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Intermittent fasting",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Body for Life",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Cookie diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "The Hacker's Diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Nutrisystem diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Weight Watchers diet:",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Inedia (breatharian diet)",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Very low calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "KE diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Very low calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Tongue Patch Diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Very low calorie diets",
+            "image": ""
         },
         {
-            "name": "",
+            "name": "Atkins diet",
             "description": "",
             "url": "",
-            "diet": ""
+            "diet": "Low-carbohydrate diets",
+            "image": ""
+        },
+        {
+            "name": "Dukan Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate diets",
+            "image": ""
+        },
+        {
+            "name": "Kimkins",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate diets",
+            "image": ""
+        },
+        {
+            "name": "South Beach Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate diets",
+            "image": ""
+        },
+        {
+            "name": "Stillman diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate diets",
+            "image": ""
+        },
+        {
+            "name": "McDougall's starch diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Beverly Hills Diet",
+            "description": "",
+            "url": "",
+            "diet": "Crash diets",
+            "image": ""
+        },
+        {
+            "name": "Grapefruit diet",
+            "description": "",
+            "url": "",
+            "diet": "Crash diets",
+            "image": ""
+        },
+        {
+            "name": "Monotrophic diet",
+            "description": "",
+            "url": "",
+            "diet": "Crash diets",
+            "image": ""
+        },
+        {
+            "name": "Cabbage soup diet",
+            "description": "",
+            "url": "",
+            "diet": "Crash diets",
+            "image": ""
+        },
+        {
+            "name": "Subway diet",
+            "description": "",
+            "url": "",
+            "diet": "Crash diets",
+            "image": ""
+        },
+        {
+            "name": "Juice fasting",
+            "description": "",
+            "url": "",
+            "diet": "Detox diets",
+            "image": ""
+        },
+        {
+            "name": "Master Cleanse",
+            "description": "",
+            "url": "",
+            "diet": "Detox diets",
+            "image": ""
+        },
+        {
+            "name": "DASH diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Diabetic diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Elemental diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Elimination diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Gluten-free diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Healthy kidney diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Ketogenic diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Liquid diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Low-FODMAP diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Soft diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Specific carbohydrate diet",
+            "description": "",
+            "url": "",
+            "diet": "Medical reasons diets",
+            "image": ""
+        },
+        {
+            "name": "Alkaline diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Baby food diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Cabbage soup diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Carnivore diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Clean eating",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Cookie diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Egg and wine diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Food combining diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Fit for Life diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Fruitarianism",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Gluten free diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Grapefruit diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Lamb chop and pineapple diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Macrobiotics",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Morning banana diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Mucusless Diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Paleolithic diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Pegan diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Rhubarb diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Superfood diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Whole30 diet",
+            "description": "",
+            "url": "",
+            "diet": "Food-specific diets",
+            "image": ""
+        },
+        {
+            "name": "Atkins diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Bulletproof diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Drinking Man's Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Dukan Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Ketogenic diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Pioppi Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Protein Power",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Rosedale diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Salisbury diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Stillman diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Sugar Busters",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Zone diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Rosedale diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Scarsdale medical diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "South Beach Diet",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "The 4-Hour Body",
+            "description": "",
+            "url": "",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "F-plan",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Ornish diet",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "McDougall diet",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Pritikin Diet",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Rice diet",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Cambridge Diet",
+            "description": "",
+            "url": "",
+            "diet": "Liquid diets",
+            "image": ""
+        },
+        {
+            "name": "Slim-Fast",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "KE diet",
+            "description": "",
+            "url": "",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "5:2 diet",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Breatharian diet",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Dubrow Diet",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Intermittent fasting",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Juice fasting",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Orthopathy",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Protein-sparing modified fast",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "The Last Chance Diet",
+            "description": "",
+            "url": "",
+            "diet": "Fasting",
+            "image": ""
+        },
+        {
+            "name": "Detox diet",
+            "description": "",
+            "url": "",
+            "diet": "Detoxifying",
+            "image": ""
+        },
+        {
+            "name": "Fat Flush Plan",
+            "description": "",
+            "url": "",
+            "diet": "Detoxifying",
+            "image": ""
+        },
+        {
+            "name": "Lemon detox diet",
+            "description": "",
+            "url": "",
+            "diet": "Detoxifying",
+            "image": ""
+        },
+        {
+            "name": "Activated charcoal diet",
+            "description": "",
+            "url": "",
+            "diet": "Detoxifying",
+            "image": ""
+        },
+        {
+            "name": "Wheatgrass diet",
+            "description": "",
+            "url": "",
+            "diet": "Detoxifying",
+            "image": ""
+        },
+        {
+            "name": "Blood type diet",
+            "description": "",
+            "url": "",
+            "diet": "Other fad diets",
+            "image": ""
+        },
+        {
+            "name": "Cotton ball diet",
+            "description": "",
+            "url": "",
+            "diet": "Other fad diets",
+            "image": ""
+        },
+        {
+            "name": "Immune Power Diet",
+            "description": "",
+            "url": "",
+            "diet": "Other fad diets",
+            "image": ""
+        },
+        {
+            "name": "Werewolf diet",
+            "description": "",
+            "url": "",
+            "diet": "Other fad diets",
+            "image": ""
+        },
+        {
+            "name": "Fruitarian diet",
+            "description": "",
+            "url": "",
+            "diet": "Vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Lacto vegetarianism",
+            "description": "",
+            "url": "",
+            "diet": "Vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Ovo vegetarianism",
+            "description": "",
+            "url": "",
+            "diet": "Vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Ovo-lacto vegetarianism",
+            "description": "",
+            "url": "",
+            "diet": "Vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Vegan diet",
+            "description": "",
+            "url": "",
+            "diet": "Vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Semi-vegetarianism",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Pescetarianism",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Pollotarianism",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Kangatarian",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Planetary health diet",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Plant-based diet",
+            "description": "",
+            "url": "",
+            "diet": "Semi-vegetarian diets",
+            "image": ""
+        },
+        {
+            "name": "Alkaline diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Clean eating",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Climatarian diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Eat-clean diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Gerson therapy",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "The Graham Diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Alkaline diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Hay diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "High-protein diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "High residue diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Inuit diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Jenny Craig",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Locavore diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low carbon diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low-fat diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low glycemic index diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low-protein diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low sodium diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Negative calorie diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Low-sulfur diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Macrobiotic diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Mediterranean diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "MIND diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Montignac diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Okinawa diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Omnivore",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Organic food diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Prison loaf",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Raw foodism",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Shangri-La Diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Slimming World diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Slow-carb diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Smart For Life",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Sonoma diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "SparkPeople diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Sugar Busters",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Prison loaf",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
+        },
+        {
+            "name": "Western pattern diet",
+            "description": "",
+            "url": "",
+            "diet": "Other diets",
+            "image": ""
         }
     ]
 }

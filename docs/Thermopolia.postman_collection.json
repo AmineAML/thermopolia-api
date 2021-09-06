@@ -82,6 +82,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Diet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/Recipes/diet",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"Recipes",
+						"diet"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
