@@ -2,610 +2,624 @@
     "diets": [
         {
             "name": "Buddhist diet",
-            "description": "",
-            "url": "",
+            "description": "While Buddhism does not have specific dietary rules, some Buddhists practice vegetarianism based on a strict interpretation of the first of the Five Precepts which is the Dharmic concept of ahimsa (non-violence)",
+            "url": "https://en.wikipedia.org/wiki/Buddhist_cuisine",
             "diet": "Belief-based diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Chinese-buddhist-cuisine-taiwan-1.jpg"
         },
         {
             "name": "Hindu and Jain diets",
-            "description": "",
-            "url": "",
+            "description": "Followers of Hinduism and Jainism may follow lacto vegetarian diets (though most do not), based on the principle of ahimsa (non-harming)",
+            "url": "https://en.wikipedia.org/wiki/Lacto_vegetarianism",
             "diet": "Belief-based diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Soy-whey-protein-diet.jpg/1920px-Soy-whey-protein-diet.jpg"
         },
         {
             "name": "Islamic dietary laws",
-            "description": "",
-            "url": "",
+            "description": "Muslims follow a diet consisting solely of food that is halal – permissible in Islam. The opposite of halal is haraam, food that is Islamically Impermissible. Haraam substances include alcohol, pork, and any meat from an animal which was not killed through the Islamic method of ritual slaughter (Dhabiha)",
+            "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws",
             "diet": "Belief-based diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/ALFiqh.png"
         },
         {
             "name": "I-tal",
-            "description": "",
-            "url": "",
+            "description": "A set of principles which influences the diet of many members of the Rastafari movement. One principle is that natural foods should be consumed. Some Rastafarians interpret I-tal to advocate vegetarianism or veganism",
+            "url": "https://en.wikipedia.org/wiki/Ital",
             "diet": "Belief-based diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Ital_food_-_01.jpg/1280px-Ital_food_-_01.jpg"
         },
         {
             "name": "Kosher diet",
-            "description": "",
-            "url": "",
+            "description": "Food permissible under Kashrut, the set of Jewish dietary laws, is said to be Kosher. Some foods and food combinations are non-Kosher, and failure to prepare food in accordance with Kashrut can make otherwise permissible foods non-Kosher",
+            "url": "https://en.wikipedia.org/wiki/Kosher_foods",
             "diet": "Belief-based diets",
             "image": ""
         },
         {
             "name": "Seventh-day Adventist",
-            "description": "",
-            "url": "",
+            "description": "Seventh-day Adventists combine the Kosher rules of Judaism with prohibitions against alcohol and caffeinated beverages and an emphasis on whole foods. About half of Adventists are lacto-ovo-vegetarians",
+            "url": "https://en.wikipedia.org/wiki/Seventh-day_Adventist_Church#Health_and_diet",
             "diet": "Belief-based diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Ital_food_-_01.jpg/1280px-Ital_food_-_01.jpg"
         },
         {
             "name": "Word of Wisdom",
-            "description": "",
-            "url": "",
+            "description": "The name of a section of the Doctrine and Covenants, a book of scripture accepted by members of The Church of Jesus Christ of Latter-day Saints. Dietary advice includes (1) wholesome plants \"in the season thereof\", (2) eating meat sparingly and only \"in times of winter, or of cold, or famine\", and (3) grain as the \"staff of life\"",
+            "url": "https://en.wikipedia.org/wiki/Word_of_Wisdom",
             "diet": "Belief-based diets",
             "image": ""
         },
         {
             "name": "Remba/Lemba diet",
-            "description": "",
-            "url": "",
+            "description": "Lemba people or Remba people are found in Southern Africa and their diet is based on their culture. Their day includes meats and carbohydrates but the meat is slaughtered in a specific way so as to drain maximum blood from the animal. They pay particular attention to cleanliness of the person handling and preparing as well as the utensils used for food. Their diet excludes pork",
+            "url": "https://en.wikipedia.org/wiki/Lemba_people",
             "diet": "Belief-based diets",
             "image": ""
         },
         {
             "name": "5:2 diet",
-            "description": "",
-            "url": "",
+            "description": "an intermittent fasting diet popularized by Michael Mosley in 2012",
+            "url": "https://en.wikipedia.org/wiki/Intermittent_fasting",
             "diet": "Low-calorie diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Intermittent_fasting.svg/1024px-Intermittent_fasting.svg.png"
         },
         {
             "name": "Intermittent fasting",
-            "description": "",
-            "url": "",
+            "description": "Cycling between non-fasting and fasting as a method of calorie restriction",
+            "url": "https://en.wikipedia.org/wiki/Intermittent_fasting",
             "diet": "Low-calorie diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Intermittent_fasting.svg/1024px-Intermittent_fasting.svg.png"
         },
         {
             "name": "Body for Life",
-            "description": "",
-            "url": "",
+            "description": "A calorie-control diet, promoted as part of the 12-week Body for Life program",
+            "url": "https://en.wikipedia.org/wiki/Body_for_Life#Diet",
             "diet": "Low-calorie diets",
             "image": ""
         },
         {
             "name": "Cookie diet",
-            "description": "",
-            "url": "",
+            "description": "A calorie control diet in which low-fat cookies are eaten to quell hunger, often in place of a meal",
+            "url": "https://en.wikipedia.org/wiki/Cookie_diet",
             "diet": "Low-calorie diets",
             "image": ""
         },
         {
             "name": "The Hacker's Diet",
-            "description": "",
-            "url": "",
+            "description": "A calorie-control diet from The Hacker's Diet by John Walker. The book suggests that the key to reaching and maintaining the desired weight is understanding and carefully monitoring calories consumed and used",
+            "url": "https://en.wikipedia.org/wiki/The_Hacker%27s_Diet",
             "diet": "Low-calorie diets",
             "image": ""
         },
         {
             "name": "Nutrisystem diet",
-            "description": "",
-            "url": "",
+            "description": "The dietary element of the weight-loss plan from Nutrisystem, Inc. Nutrisystem distributes low-calorie meals, with specific ratios of fats, proteins and carbohydrates",
+            "url": "https://en.wikipedia.org/wiki/Nutrisystem",
             "diet": "Low-calorie diets",
             "image": ""
         },
         {
             "name": "Weight Watchers diet:",
-            "description": "",
-            "url": "",
+            "description": "Foods are assigned point values; dieters can eat any food with a point value provided they stay within their daily point limit",
+            "url": "https://en.wikipedia.org/wiki/Weight_Watchers_(diet)",
             "diet": "Low-calorie diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Weight_Watchers%2C_Pointsfinder_Slide_Rule_-_MIT_Slide_Rule_Collection_-_DSC03657.JPG/800px-Weight_Watchers%2C_Pointsfinder_Slide_Rule_-_MIT_Slide_Rule_Collection_-_DSC03657.JPG"
         },
         {
             "name": "Inedia (breatharian diet)",
-            "description": "",
-            "url": "",
+            "description": "A diet in which no food is consumed, based on the belief that food is not necessary for human subsistence",
+            "url": "https://en.wikipedia.org/wiki/Inedia",
             "diet": "Very low calorie diets",
             "image": ""
         },
         {
             "name": "KE diet",
-            "description": "",
-            "url": "",
+            "description": "A diet in which an individual feeds through a feeding tube and does not eat anything",
+            "url": "https://en.wikipedia.org/wiki/KE_diet",
             "diet": "Very low calorie diets",
             "image": ""
         },
         {
             "name": "Tongue Patch Diet",
-            "description": "",
-            "url": "",
+            "description": "Stitching a Marlex patch to the tongue to make eating painful. Daily calories are then limited to 800 per day maximum in liquid form",
+            "url": "Stitching a Marlex patch to the tongue to make eating painful. Daily calories are then limited to 800 per day maximum in liquid form",
             "diet": "Very low calorie diets",
             "image": ""
         },
         {
             "name": "Atkins diet",
-            "description": "",
-            "url": "",
+            "description": "A low-carbohydrate diet, popularized by nutritionist Robert Atkins in the late-20th and early-21st centuries.[19] Proponents argue that this approach is a more successful way of losing weight than low-calorie diets;[20] critics argue that a low-carb approach poses increased health risks.[21] The Atkins diet consists of four phases (Induction, Balancing, Fine-Tuning and Maintenance) with a gradual increase in consumption of carbohydrates as the person goes through the phases",
+            "url": "https://en.wikipedia.org/wiki/Atkins_diet",
             "diet": "Low-carbohydrate diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Atkins_diet"
         },
         {
             "name": "Dukan Diet",
-            "description": "",
-            "url": "",
+            "description": "A multi-step diet based on high protein and limited carbohydrate consumption. It starts with two steps intended to facilitate short term weight loss, followed by two steps intended to consolidate these losses and return to a more balanced long-term diet",
+            "url": "https://en.wikipedia.org/wiki/Dukan_Diet",
             "diet": "Low-carbohydrate diets",
             "image": ""
         },
         {
             "name": "Kimkins",
-            "description": "",
-            "url": "",
+            "description": "A heavily promoted diet for weight loss, found to be fraudulent",
+            "url": "https://en.wikipedia.org/wiki/Kimkins",
             "diet": "Low-carbohydrate diets",
             "image": ""
         },
         {
             "name": "South Beach Diet",
-            "description": "",
-            "url": "",
+            "description": "Diet developed by the Miami-based cardiologist Arthur Agatston, who says that the key to losing weight quickly and getting healthy is not cutting all carbohydrates and fats from the diet, but choosing the right carbs and the right fats",
+            "url": "https://en.wikipedia.org/wiki/South_Beach_Diet",
             "diet": "Low-carbohydrate diets",
             "image": ""
         },
         {
             "name": "Stillman diet",
-            "description": "",
-            "url": "",
+            "description": "A carbohydrate-restricted diet that predates the Atkins diet, allowing consumption of specific food ingredients",
+            "url": "https://en.wikipedia.org/wiki/Stillman_diet",
             "diet": "Low-carbohydrate diets",
             "image": ""
         },
         {
             "name": "McDougall's starch diet",
-            "description": "",
-            "url": "",
+            "description": "McDougall's starch diet is a high calorie, high fiber, low fat diet that is based on starches such as potatoes, rice, and beans which excludes all animal foods and added vegetable oils. John A. McDougall draws on historical observation of how many civilizations around the world throughout time have thrived on starch foods",
+            "url": "https://en.wikipedia.org/wiki/John_A._McDougall",
             "diet": "Low-fat diets",
             "image": ""
         },
         {
             "name": "Beverly Hills Diet",
-            "description": "",
-            "url": "",
+            "description": "An extreme diet which has only fruits in the first days, gradually increasing the selection of foods up to the sixth week",
+            "url": "https://en.wikipedia.org/wiki/Beverly_Hills_Diet",
             "diet": "Crash diets",
             "image": ""
         },
         {
             "name": "Grapefruit diet",
-            "description": "",
-            "url": "",
+            "description": "A fad diet, intended to facilitate weight loss, in which grapefruit is consumed in large quantities at meal times",
+            "url": "https://en.wikipedia.org/wiki/Grapefruit_diet",
             "diet": "Crash diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/18-Day_Diet.png"
         },
         {
             "name": "Monotrophic diet",
-            "description": "",
-            "url": "",
+            "description": "A diet that involves eating only one food item, or one type of food, for a period of time to achieve a desired weight reduction",
+            "url": "https://en.wikipedia.org/wiki/Monotrophic_diet",
             "diet": "Crash diets",
             "image": ""
         },
         {
             "name": "Cabbage soup diet",
-            "description": "",
-            "url": "",
+            "description": "A low-calorie diet based on heavy consumption of cabbage soup. Considered a fad diet",
+            "url": "https://en.wikipedia.org/wiki/Cabbage_soup_diet",
             "diet": "Crash diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cabbage_Soup_Kapu%C5%9Bniak_01.JPG"
         },
         {
             "name": "Subway diet",
-            "description": "",
-            "url": "",
+            "description": "A crash diet[33] in which a person consumes Subway sandwiches in place of higher calorie fast foods. Made famous by convicted sex offender and former obese student Jared Fogle, who lost 245 pounds after replacing his meals with Subway sandwiches as part of an effort to lose weight",
+            "url": "https://en.wikipedia.org/wiki/Jared_Fogle#Subway_campaign",
             "diet": "Crash diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Jared_Fogle#Subway_campaign"
         },
         {
             "name": "Juice fasting",
-            "description": "",
-            "url": "",
+            "description": "A form of detox diet, in which nutrition is obtained solely from fruit and vegetable juices. The health implications of such diets are disputed",
+            "url": "https://en.wikipedia.org/wiki/Juice_fasting",
             "diet": "Detox diets",
-            "image": ""
+            "image": "A form of juice fasting"
         },
         {
             "name": "Master Cleanse",
-            "description": "",
-            "url": "",
+            "description": "A form of juice fasting",
+            "url": "https://en.wikipedia.org/wiki/Master_Cleanse",
             "diet": "Detox diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Master_Cleanse.jpg"
         },
         {
             "name": "DASH diet",
-            "description": "",
-            "url": "",
+            "description": "A recommendation that those with high blood pressure consume large quantities of fruits, vegetables, whole-grains and low fat dairy foods as part of their diet, and avoid sugar sweetened foods, red meat and fats. Promoted by the US Department of Health and Human Services, a United States government organisation",
+            "url": "https://en.wikipedia.org/wiki/DASH_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Diabetic diet",
-            "description": "",
-            "url": "",
+            "description": "An umbrella term for diets recommended to people with diabetes. There is considerable disagreement in the scientific community as to what sort of diet is best for people with diabetes",
+            "url": "https://en.wikipedia.org/wiki/Diet_in_diabetes",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Elemental diet",
-            "description": "",
-            "url": "",
+            "description": "A medical, liquid-only diet, in which liquid nutrients are consumed for ease of ingestion",
+            "url": "https://en.wikipedia.org/wiki/Elemental_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Elimination diet",
-            "description": "",
-            "url": "",
+            "description": "A method of identifying foods which cause a person adverse effects, by process of elimination",
+            "url": "A method of identifying foods which cause a person adverse effects, by process of elimination",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Gluten-free diet",
-            "description": "",
-            "url": "",
+            "description": "A diet which avoids the protein gluten, which is found in barley, rye and wheat. It is a medical treatment for gluten-related disorders, which include coeliac disease, non-celiac gluten sensitivity, gluten ataxia, dermatitis herpetiformis and wheat allergy",
+            "url": "https://en.wikipedia.org/wiki/Gluten-free_diet",
+            "diet": "Medical reasons diets",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/Triticum_monococcum0.jpg"
+        },
+        {
+            "name": "Gluten-free, casein-free diet",
+            "description": "A gluten-free diet which also avoids casein, a protein commonly found in milk and cheese. This diet has been researched for efficacy in treatment of autism spectrum disorder",
+            "url": "https://en.wikipedia.org/wiki/Gluten-free,_casein-free_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Healthy kidney diet",
-            "description": "",
-            "url": "",
+            "description": "This diet is for those impacted with chronic kidney disease, those with only one kidney who have a kidney infection and those who may be suffering from some other kidney failure. This diet is not the dialysis diet, which is completely different. The healthy kidney diet restricts large amounts of protein, which are hard for the kidney to break down, but especially limits potassium and phosphorus-rich foods and beverages. Liquid intake is often limited as well",
+            "url": "https://en.wikipedia.org/wiki/Renal_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Ketogenic diet",
-            "description": "",
-            "url": "",
+            "description": "A high-fat, low-carb diet, in which dietary and body fat is converted into energy. It is used as a medical treatment for refractory epilepsy",
+            "url": "https://en.wikipedia.org/wiki/Ketogenic_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Liquid diet",
-            "description": "",
-            "url": "",
+            "description": "A diet in which only liquids are consumed. May be administered by clinicians for medical reasons, such as after a gastric bypass or to prevent death through starvation from a hunger strike",
+            "url": "https://en.wikipedia.org/wiki/Liquid_diet",
             "diet": "Medical reasons diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Milk_glass1.jpg"
         },
         {
             "name": "Low-FODMAP diet",
-            "description": "",
-            "url": "",
+            "description": "A diet that consists in the global restriction of all fermentable carbohydrates (FODMAPs)",
+            "url": "https://en.wikipedia.org/wiki/Low-FODMAP_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Soft diet",
-            "description": "",
-            "url": "",
+            "description": "A diet that involves only foods that are physically soft, with the goal of reducing or eliminating the need to chew the food",
+            "url": "https://en.wikipedia.org/wiki/Soft_diet",
             "diet": "Medical reasons diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Apple-sauce-544676.jpg/1920px-Apple-sauce-544676.jpg"
         },
         {
             "name": "Specific carbohydrate diet",
-            "description": "",
-            "url": "",
+            "description": "A diet that aims to restrict the intake of complex carbohydrates such as found in grains and complex sugars",
+            "url": "https://en.wikipedia.org/wiki/Specific_carbohydrate_diet",
             "diet": "Medical reasons diets",
             "image": ""
         },
         {
             "name": "Alkaline diet",
-            "description": "",
-            "url": "",
+            "description": "Describes a group of loosely related diets based on the misconception that different types of food can have an effect on the pH balance of the body. It originated from the acid ash hypothesis, which primarily related to osteoporosis research",
+            "url": "https://en.wikipedia.org/wiki/Alkaline_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Alkaline_diet"
         },
         {
             "name": "Baby food diet",
-            "description": "",
-            "url": "",
+            "description": "Baby food is any soft, easily consumed food other than breastmilk or infant formula that is made specifically for human babies between four and six months and two years old",
+            "url": "https://en.wikipedia.org/wiki/Baby_food",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Baby_food"
         },
         {
             "name": "Cabbage soup diet",
-            "description": "",
-            "url": "",
+            "description": "A radical weight loss diet designed around heavy consumption of a low-calorie cabbage soup over seven days. It is generally considered a fad diet, in that it is designed for short-term weight-loss and requires no long-term commitmen",
+            "url": "https://en.wikipedia.org/wiki/Cabbage_soup_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cabbage_Soup_Kapu%C5%9Bniak_01.JPG"
         },
         {
             "name": "Carnivore diet",
-            "description": "",
-            "url": "",
+            "description": "The carnivore diet involves eating only animal products",
+            "url": "https://en.wikipedia.org/wiki/Monotrophic_diet#Carnivore_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/%27Duck%2C_Duck%2C_Duck%27.png/800px-%27Duck%2C_Duck%2C_Duck%27.png"
         },
         {
             "name": "Clean eating",
-            "description": "",
-            "url": "",
+            "description": "A fad diet based on the belief that consuming whole foods and avoiding convenience food and other processed foods offers certain health benefits",
+            "url": "https://en.wikipedia.org/wiki/Clean_eating",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Clean_eating"
         },
         {
             "name": "Cookie diet",
-            "description": "",
-            "url": "",
+            "description": "A calorie restricted fad diet designed to produce weight loss, based on meal replacement in the form of a specially formulated cookie",
+            "url": "https://en.wikipedia.org/wiki/Cookie_diet",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Egg and wine diet",
-            "description": "",
-            "url": "",
+            "description": "he diet advocated the consumption of 3-5 eggs per day plus a 24-oz bottle of wine",
+            "url": "https://en.wikipedia.org/wiki/Egg_and_wine_diet",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Food combining diet",
-            "description": "",
-            "url": "",
+            "description": "A nutritional approach where certain food types are deliberately consumed together or separately. For instance, some weight control diets suggest that proteins and carbohydrates should not be consumed in the same meal",
+            "url": "https://en.wikipedia.org/wiki/Food_combining",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Fit for Life diet",
-            "description": "",
-            "url": "",
+            "description": "a fad diet which specifies eating only fruit in the morning, eating predominantly \"live\" and \"high-water-content\" food, and, if animal protein is eaten, avoiding combining it with complex carbohydrates",
+            "url": "https://en.wikipedia.org/wiki/Fit_for_Life",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/8/8d/Fitforlifecover.jpg"
         },
         {
             "name": "Fruitarianism",
-            "description": "",
-            "url": "",
+            "description": "A subset of dietary veganism, consisting of primarily fruits, and possibly nuts and seeds, but without animal products. Fruitarian diets are subject to numerous criticisms and health concerns",
+            "url": "https://en.wikipedia.org/wiki/Fruitarianism",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Fruitarianism"
         },
         {
             "name": "Gluten free diet",
-            "description": "",
-            "url": "",
+            "description": "A diet which avoids the protein gluten, which is found in barley, rye and wheat. It is a medical treatment for gluten-related disorders, which include coeliac disease, non-celiac gluten sensitivity, gluten ataxia, dermatitis herpetiformis and wheat allergy",
+            "url": "https://en.wikipedia.org/wiki/Gluten-free_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://en.wikipedia.org/wiki/Gluten-free_diet"
         },
         {
             "name": "Grapefruit diet",
-            "description": "",
-            "url": "",
+            "description": "A fad diet, intended to facilitate weight loss, in which grapefruit is consumed in large quantities at meal times",
+            "url": "https://en.wikipedia.org/wiki/Grapefruit_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/18-Day_Diet.png"
         },
         {
             "name": "Lamb chop and pineapple diet",
-            "description": "",
-            "url": "",
+            "description": "The idea behind the diet was that lamb chops provide sufficient protein for strength, pineapples enough sugar for energy, while the fruit acid would absorb or destroy any leftover fat from the lamb chops",
+            "url": "https://en.wikipedia.org/wiki/Lamb_chop_and_pineapple_diet",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Macrobiotics",
-            "description": "",
-            "url": "",
+            "description": "A fad diet based on ideas about types of food drawn from Zen Buddhism. The diet tries to balance the supposed yin and yang elements of food and cookware. Major principles of macrobiotic diets are to reduce animal products, eat locally grown foods that are in season, and consume meals in moderation",
+            "url": "https://en.wikipedia.org/wiki/Macrobiotic_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yin_yang.svg/1024px-Yin_yang.svg.png"
         },
         {
             "name": "Morning banana diet",
-            "description": "",
-            "url": "",
+            "description": "The diet plan allows consumption of unlimited bananas with room temperature water or a serving of milk for breakfast",
+            "url": "https://en.wikipedia.org/wiki/Morning_banana_diet",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Mucusless Diet",
-            "description": "",
-            "url": "",
+            "description": "Based on that white blood cells are caused by consuming mucus-forming foods, and as waste materials, poison the blood",
+            "url": "https://en.wikipedia.org/wiki/Arnold_Ehret#Diet_system",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Paleolithic diet",
-            "description": "",
-            "url": "",
+            "description": "A modern fad diet consisting of foods thought by its proponents to mirror those eaten by humans during the Paleolithic era",
+            "url": "https://en.wikipedia.org/wiki/Paleolithic_diet",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Paleo_food.jpg"
         },
         {
             "name": "Pegan diet",
-            "description": "",
-            "url": "",
+            "description": "A plant-rich diet that combines principles of the paleo and vegan diets. The pegan diet is gluten-free and encourages consumption of nonstarchy vegetables with grass-fed organic meats and low-mercury fish. The diet consists of 75% plant foods and limits fruits to low-glycemic berries. The pegan diet opposes refined sugar and foods that can spike insulin production. The diet also opposes cow's milk but is not dairy free. Hyman allows the occasional organic goat or sheep milk, yogurt, kefir, grass-fed butter, ghee or cheese",
+            "url": "https://en.wikipedia.org/wiki/Mark_Hyman_(doctor)#Peganism",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Rhubarb diet",
-            "description": "",
-            "url": "",
+            "description": "A diet consisting of eating the Rheum ribes",
+            "url": "https://en.wikipedia.org/wiki/Rhubarb#Food",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rheum_ribes_-_I%C5%9Fg%C4%B1n_06.jpg/1280px-Rheum_ribes_-_I%C5%9Fg%C4%B1n_06.jpg"
         },
         {
             "name": "Superfood diet",
-            "description": "",
-            "url": "",
+            "description": "A marketing term for food claimed to confer health benefits resulting from an exceptional nutrient density. The term is not commonly used by experts, dietitians and nutrition scientists, most of whom dispute that particular foods have the health benefits claimed by their advocates",
+            "url": "https://en.wikipedia.org/wiki/Superfood",
             "diet": "Food-specific diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Blueberries_on_branch.jpg/800px-Blueberries_on_branch.jpg"
         },
         {
             "name": "Whole30 diet",
-            "description": "",
-            "url": "",
+            "description": "A 30-day fad diet that emphasizes whole foods and the elimination of sugar, alcohol, grains, legumes, soy, and dairy",
+            "url": "https://en.wikipedia.org/wiki/Whole30",
             "diet": "Food-specific diets",
             "image": ""
         },
         {
             "name": "Atkins diet",
-            "description": "",
-            "url": "",
+            "description": "A low-carbohydrate fad diet devised by Robert Atkins in the 1970s, marketed with questionable claims that carbohydrate restriction is crucial to weight loss and that the diet offered \"a high calorie way to stay thin forever\"",
+            "url": "https://en.wikipedia.org/wiki/Atkins_diet",
             "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/f/fd/Atkins_Diet_Revolution.png"
         },
         {
             "name": "Bulletproof diet",
-            "description": "",
-            "url": "",
+            "description": "A diet developed and marketed by Asprey recommends eating foods high in fat, moderate in protein, and low in carbohydrates; the foundation is \"Bulletproof Coffee\", made with grass-fed unsalted butter and either coconut oil or medium-chain triglycerides (MCTs) (Asprey sells both mixed MCT and pure caprylic acid MCT oils)",
+            "url": "https://en.wikipedia.org/wiki/Dave_Asprey#Bulletproof_diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Drinking Man's Diet",
-            "description": "",
-            "url": "",
+            "description": "A low-carb high-fat diet with plenty of meat and alcohol",
+            "url": "https://en.wikipedia.org/wiki/Robert_Cameron_(photographer)#Drinking_Man's_Diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Dukan Diet",
-            "description": "",
-            "url": "",
+            "description": "A high-protein low-carbohydrate fad diet devised by Pierre Dukan",
+            "url": "https://en.wikipedia.org/wiki/Dukan_Diet",
+            "diet": "Low-carbohydrate / high-fat diets",
+            "image": ""
+        },
+        {
+            "name": "Hamptons Diet",
+            "description": "A low-carbohydrate, low-calorie diet known as the Hamptons diet. The diet is described as a mixture of the Atkins diet and the Mediterranean diet",
+            "url": "https://en.wikipedia.org/wiki/Fred_Pescatore#Hamptons_Diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Ketogenic diet",
-            "description": "",
-            "url": "",
+            "description": "A high-fat, low-carbohydrate diet used to treat drug-resistant childhood epilepsy. The premise of the ketogenic diet for weight loss is that if the body is deprived of glucose obtained from carbohydrate foods, it will produce energy from stored fat",
+            "url": "https://en.wikipedia.org/wiki/Low-carbohydrate_diet#Ketogenic_diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Pioppi Diet",
-            "description": "",
-            "url": "",
+            "description": "A higher-fat diet that encourages adherents to eat lots of vegetables, nuts, legumes, and fish and discourages them from eating red meat, starchy carbs, and sweetened treats",
+            "url": "https://en.wikipedia.org/wiki/Aseem_Malhotra#Pioppi_diet_and_low_carb_diet_advocacy",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Protein Power",
-            "description": "",
-            "url": "",
+            "description": "A high-protein low-carbohydrate fad diet developed by physician Michael R. Eades and his wife Mary Dan Eades",
+            "url": "https://en.wikipedia.org/wiki/Protein_Power",
             "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/f/f6/Protein_Power.png"
         },
         {
             "name": "Rosedale diet",
-            "description": "",
-            "url": "",
+            "description": "A low-carbohydrate fad diet based on the ideas of Ron Rosedale about how leptin affects the human body. The diet is marketed with questionable claims about how it can treat a large number of human health conditions",
+            "url": "https://en.wikipedia.org/wiki/Rosedale_diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Salisbury diet",
-            "description": "",
-            "url": "",
+            "description": "A diet based on that human dentition demonstrated that humans were meant to eat meat, and sought to limit vegetables, fruit, starches, and fats to one-third of the diet",
+            "url": "https://en.wikipedia.org/wiki/James_H._Salisbury#Career",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Stillman diet",
-            "description": "",
-            "url": "",
+            "description": "A high-protein, low-carbohydrate diet",
+            "url": "https://en.wikipedia.org/wiki/Stillman_diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Sugar Busters",
-            "description": "",
-            "url": "",
+            "description": "A diet focused on eliminating foods containing refined carbohydrates such as refined sugar, white flour, and white rice, as well as naturally occurring carbohydrates rating high on the glycemic index such as potatoes and carrots",
+            "url": "https://en.wikipedia.org/wiki/Sugar_Busters!",
             "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/0/09/Sugar_Busters%21.jpg"
         },
         {
             "name": "Zone diet",
-            "description": "",
-            "url": "",
-            "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
-        },
-        {
-            "name": "Rosedale diet",
-            "description": "",
-            "url": "",
+            "description": "A diet in which a person attempts to split calorie intake from carbohydrates, proteins and fats in a 40:30:30 ratio",
+            "url": "https://en.wikipedia.org/wiki/Zone_diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "Scarsdale medical diet",
-            "description": "",
-            "url": "",
+            "description": "A high-protein low-carbohydrate fad diet designed for weight loss",
+            "url": "https://en.wikipedia.org/wiki/Scarsdale_diet",
             "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/3/37/Scarsdale_diet.jpg"
         },
         {
             "name": "South Beach Diet",
-            "description": "",
-            "url": "",
+            "description": "It emphasizes eating food with a low glycemic index, and categorizes carbohydrates and fats as \"good\" or \"bad\"",
+            "url": "https://en.wikipedia.org/wiki/South_Beach_Diet",
             "diet": "Low-carbohydrate / high-fat diets",
             "image": ""
         },
         {
             "name": "The 4-Hour Body",
-            "description": "",
-            "url": "",
+            "description": "A \"Slow-carb Diet\", which imposes three cardinal strictures: eat a very simple set of meals repeatedly; focus on \"slow carbs\"; and allow one \"cheat day\" a week when all foods are allowed. The diet prohibits starches and all things sweet (including fruit and all artificial sweeteners), with strong preferences for lean protein and a few specific vegetables",
+            "url": "https://en.wikipedia.org/wiki/The_4-Hour_Body",
             "diet": "Low-carbohydrate / high-fat diets",
-            "image": ""
+            "image": "https://upload.wikimedia.org/wikipedia/en/e/ec/The_4-hour_body.jpg"
         },
         {
             "name": "F-plan",
-            "description": "",
-            "url": "",
+            "description": "A high fibre diet designed to induce healthy weight loss",
+            "url": "https://en.wikipedia.org/wiki/F-plan",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "Ornish diet",
-            "description": "",
-            "url": "",
+            "description": "A quasi whole foods, plant-based diet",
+            "url": "https://en.wikipedia.org/wiki/Dean_Ornish",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "McDougall diet",
-            "description": "",
-            "url": "",
+            "description": "A low-fat starch-based diet that is high in fiber and contains no cholesterol. The diet is based on a variety of starches such as rice, potatoes, corn, breads, pasta and fresh or frozen fruits and vegetables",
+            "url": "https://en.wikipedia.org/wiki/John_A._McDougall#Diet_programs_and_products",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "Pritikin Diet",
-            "description": "",
-            "url": "",
+            "description": "A diet which focusses on the consumption of unprocessed food",
+            "url": "https://en.wikipedia.org/wiki/Pritikin_diet",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "Rice diet",
-            "description": "",
-            "url": "",
+            "description": "The Rice Diet started as a radical treatment for malignant hypertension before the advent of antihypertensive drugs; the original diet included strict dietary restriction and hospitalization for monitoring. Some contemporary versions have been greatly relaxed, and have been described as fad diets",
+            "url": "https://en.wikipedia.org/wiki/Rice_diet",
+            "diet": "High-carbohydrate / low-fat diets",
+            "image": ""
+        },
+        {
+            "name": "The Good Carbohydrate Revolution",
+            "description": "a high-carbohydrate low-fat fad diet",
+            "url": "https://en.wikipedia.org/wiki/Terry_Shintani#Career",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "Cambridge Diet",
-            "description": "",
-            "url": "",
+            "description": "A very-low-calorie meal replacement fad diet",
+            "url": "https://en.wikipedia.org/wiki/The_Cambridge_Diet",
             "diet": "Liquid diets",
             "image": ""
         },
         {
             "name": "Slim-Fast",
-            "description": "",
-            "url": "",
+            "description": "An American company that markets an eponymous brand of shakes, bars, snacks, packaged meals, and other dietary supplement foods and promotes diets and weight loss plans featuring its food products.",
+            "url": "https://en.wikipedia.org/wiki/SlimFast",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },
         {
             "name": "KE diet",
-            "description": "",
-            "url": "",
+            "description": "A fad diet in which an individual feeds a proprietary mixture through a feeding tube for a specific number of days. The dieter does not eat anything while on the diet",
+            "url": "https://en.wikipedia.org/wiki/KE_diet",
             "diet": "High-carbohydrate / low-fat diets",
             "image": ""
         },

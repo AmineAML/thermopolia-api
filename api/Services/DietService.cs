@@ -36,7 +36,10 @@ namespace api.Services
 
             _diets = await JsonSerializer.DeserializeAsync<DietsContent>(openStream);
 
-            _diet = _diets.diets.Skip(_random.Next(_diets.diets.Length)).First();
+            // Diets JSON file is in work in progress that's why include valid diet objects
+            var diets = _diets.diets.Where(d => d.description != "");
+
+            _diet = diets.Skip(_random.Next(_diets.diets.Length)).First();
 
             return _diet;
         }
