@@ -1,0 +1,30 @@
+@startuml "architecture"
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 200
+
+LAYOUT_TOP_DOWN()
+'LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+
+Person(user, User, "Cook searching for recipes")
+
+Person(subscriber, Subscriber, "Cook subscribed to the newsletter")
+
+Person(blogger, Blogger, "Member that has permissions to add recipes to the platform")
+
+Person(administrator, Administrator, "Administrator that can manage the platform")
+
+System_Boundary(c1, "Thermopolia") {
+    Container(client_web, "SPA/SSG", "JavaScript/TypeScript, Angular, Scully, NgRx, TailwindCSS, Netlify", "Provides UI for users")
+
+    Container(client_mobile, "Mobile Application", "Dart, Flutter, Bloc", "Provides UI for users")
+
+    Container(api, "API", "C#, .Net Core, Nginx", "Serves content to users and newsletter to subscribed members")
+
+    ContainerDb(database, "Database", "PostgreSQL", "Stores blogs, users data and newsletter subscriptions")
+
+    ContainerDb(cache, "Cache", "Redis", "Caches requests' response for use with the newsletter")
+}
+
+@enduml
