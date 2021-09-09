@@ -1,30 +1,83 @@
 @startuml "architecture"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 skinparam wrapWidth 200
 skinparam maxMessageSize 200
 
+AddElementTag("custom", $bgColor="#ffffff", $fontColor="#000000")
+
 LAYOUT_TOP_DOWN()
 'LAYOUT_AS_SKETCH()
-LAYOUT_WITH_LEGEND()
+' LAYOUT_WITH_LEGEND()
 
-Person(user, User, "Cook searching for recipes")
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!define DEVICONSNEWERVERSION https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
 
-Person(subscriber, Subscriber, "Cook subscribed to the newsletter")
+!include FONTAWESOME/users.puml
 
-Person(blogger, Blogger, "Member that has permissions to add recipes to the platform")
+!include FONTAWESOME/users_cog.puml
 
-Person(administrator, Administrator, "Administrator that can manage the platform")
+!include FONTAWESOME/angular.puml
+
+!include FONTAWESOME/server.puml
+
+!include FONTAWESOME/rust.puml
+
+!include DEVICONSNEWERVERSION/flutter.puml
+
+!include DEVICONSNEWERVERSION/redis.puml
+
+!include DEVICONSNEWERVERSION/postgresql.puml
+
+!include DEVICONS/dotnet.puml
+
+Person(user, User, "Cook searching for recipes", $sprite="users")
+
+Person(subscriber, Subscriber, "Cook subscribed to the newsletter", $sprite="users")
+
+Person(blogger, Blogger, "Member that has permissions to add recipes to the platform", $sprite="users")
+
+Person(administrator, Administrator, "Administrator that can manage the platform", $sprite="users_cog")
 
 System_Boundary(c1, "Thermopolia") {
-    Container(client_web, "SPA/SSG", "JavaScript/TypeScript, Angular, Scully, NgRx, TailwindCSS, Netlify", "Provides UI for users")
+    Container(client_web, "SPA/SSG", "JavaScript/TypeScript, Angular, Scully, Netlify", "Provides UI for users", $sprite="angular")
 
-    Container(client_mobile, "Mobile Application", "Dart, Flutter, Bloc", "Provides UI for users")
+    Container(client_mobile, "Mobile Application", "Dart, Flutter", "Provides UI for users", $sprite="flutter")
 
-    Container(api, "API", "C#, .Net Core, Nginx", "Serves content to users and newsletter to subscribed members")
+    Container(api, "API", "C#, .Net Core, Nginx", "Serves content to users and newsletter subscribers", $sprite="dotnet")
 
-    ContainerDb(database, "Database", "PostgreSQL", "Stores blogs, users data and newsletter subscriptions")
+    Container(diets_api, "Diets API", "Rust", "Serves content as diets data", $sprite="rust")
 
-    ContainerDb(cache, "Cache", "Redis", "Caches requests' response for use with the newsletter")
+    ContainerDb(database, "Database", "PostgreSQL", "Stores blogs, users data and newsletter subscriptions", $sprite="postgresql")
+
+    ContainerDb(cache, "Cache", "Redis", "Caches client's requests' response for use with the newsletter", $sprite="redis")
 }
+
+Container(recipes_search_api, "Recipe Search API", "API, Recipe Search", "Provides Recipes and drinks data", $tags="custom", $sprite="server")
+
+Rel(administrator, client_web, "Visits and manage application website")
+
+Rel(blogger, client_web, "Visits and adds contents to the application website")
+
+Rel(user, client_web, "Searches for recipes")
+
+Rel(user, client_mobile, "Searches for recipes")
+
+Rel(client_web, api, "Serves app", "HTTPS")
+
+Rel(client_mobile, api, "Serves app", "HTTPS")
+
+Rel(api, cache, "Reads and writes")
+
+Rel(api, database, "Reads from and writes to")
+
+Rel_L(api, subscriber, "Sends daily emails", "SMTP")
+
+Rel_R(api, diets_api, "Gets diets data")
+
+Rel_L(api, recipes_search_api, "Gets recipes data")
+
+Lay_D(recipes_search_api, subscriber)
 
 @enduml
