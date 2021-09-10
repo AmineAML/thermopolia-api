@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using api.Services;
 using api.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace api.Controllers
 {
     [ApiController]
-    [Route("[Controller]")]
+    [Route("api/v1/[Controller]")]
     public class RecipesController : ControllerBase
     {
         private readonly ILogger<RecipesController> _logger;
@@ -31,22 +32,25 @@ namespace api.Controllers
             _dietService = dietService;
         }
 
+        // Description: gets list of ten random recipes
+        // Returns: list of recipes
         [HttpGet("foods")]
-        public async Task<Recipe[]> GetTenRecipes()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<List<Recipe>>> GetTenRecipes()
         {
             try
             {
-                var res = await _recipesService.GetTenRecipes();
+                var randomRecipes = _recipesService.GetTenRecipes();
 
-                return res;
+                return Ok(await randomRecipes);
 
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException httpRequestException)
             {
-                Console.WriteLine("Errro");
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
-
-            return null;
 
             // if (!res.IsSuccessStatusCode)
             // {
@@ -56,21 +60,25 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
+        // Description: gets a recipes by its id
+        // Param: "id" unique value of the recipe
+        // Returns: recipe object
         [HttpGet("foods/{id}")]
-        public async Task<Recipe> GetRecipeById(string id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<Recipe>> GetRecipeById(string id)
         {
             try
             {
-                var res = await _recipesService.GetRecipeById(id);
+                var recipe = _recipesService.GetRecipeById(id);
 
-                return res;
+                return Ok(await recipe);
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException httpRequestException)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
-
-            return null;
 
             // if (!res.IsSuccessStatusCode)
             // {
@@ -80,22 +88,25 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
+        // Description: gets list of ten random drinks
+        // Returns: list of recipes
         [HttpGet("drinks")]
-        public async Task<Recipe[]> GetTenDrinks()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<List<Recipe>>> GetTenDrinks()
         {
             try
             {
-                var res = await _drinksService.GetTenDrinks();
+                var drinks = _drinksService.GetTenDrinks();
 
-                return res;
+                return Ok(await drinks);
 
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException httpRequestException)
             {
-                Console.WriteLine("Errro");
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
-
-            return null;
 
             // if (!res.IsSuccessStatusCode)
             // {
@@ -105,21 +116,23 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
+        // Description: gets a drink by its id
+        // Param: "id" unique value of the drink
+        // Returns: drink object
         [HttpGet("drinks/{id}")]
-        public async Task<Recipe> GetDrinksById(string id)
+        public async Task<ActionResult<Recipe>> GetDrinksById(string id)
         {
             try
             {
-                var res = await _drinksService.GetDrinkById(id);
+                var drink = _drinksService.GetDrinkById(id);
 
-                return res;
+                return Ok(await drink);
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException httpRequestException)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
-
-            return null;
 
             // if (!res.IsSuccessStatusCode)
             // {
@@ -129,21 +142,24 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
+        // Description: gets a random diet
+        // Returns: diet object
         [HttpGet("diet")]
-        public async Task<Diet> GetDiet()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<Diet>> GetDiet()
         {
             try
             {
-                var res = await _dietService.GetDiet();
+                var diet = _dietService.GetDiet();
 
-                return res;
+                return Ok(await diet);
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException httpRequestException)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
-
-            return null;
 
             // if (!res.IsSuccessStatusCode)
             // {
