@@ -10,7 +10,7 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 ## [Unreleased]
 
 ## [v0.5.0] - 2021-09-09
-## Added
+### Added
 - Init project [3c6cbc0](https://github.com/AmineAML/thermopolia-api/commit/3c6cbc00a7ca93ababe6b54a85b6d6fd18e1457f) [72b1d22](https://github.com/AmineAML/thermopolia-api/commit/72b1d22c9e29b3c0f0c6a93631e7827283153a41) [000c688](https://github.com/AmineAML/thermopolia-api/commit/000c688cadf6639bf19a45d6d9d1e769c055c846) [aac8c98](https://github.com/AmineAML/thermopolia-api/commit/aac8c986394114117ed99958304edcfb78567122) ([#1](https://app.ora.pm/p/363614?c=6211305))
 - Added GET random drinks [7ad65d5](https://github.com/AmineAML/thermopolia-api/commit/7ad65d500d518e32321b2b5e5e58892a025d28e2) ([#1](https://app.ora.pm/p/363614?c=6211305))
 - Added GET drink by id [7ad65d5](https://github.com/AmineAML/thermopolia-api/commit/7ad65d500d518e32321b2b5e5e58892a025d28e2) ([#1](https://app.ora.pm/p/363614?c=6211305))
