@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Data;
 using api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace api
 {
@@ -45,6 +47,12 @@ namespace api
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
             services.AddScoped<IDietService, DietService>();
+            services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DatabaseContext"))
+                                                        .UseSnakeCaseNamingConvention()
+                                                        .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+                                                        .EnableSensitiveDataLogging()
+            );
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

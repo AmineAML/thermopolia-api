@@ -9,5 +9,8 @@
   "RecipesSearchAPI": {
     "AppId": "",
     "AppKey": ""
+  },
+  "ConnectionStrings": {
+    "DatabaseContext": ""
   }
 }
