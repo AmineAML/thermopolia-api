@@ -35,7 +35,7 @@ namespace api.Controllers
         // Description: gets list of ten random recipes
         // Returns: list of recipes
         [HttpGet("foods")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Recipe>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<List<Recipe>>> GetTenRecipes()
         {
@@ -64,7 +64,7 @@ namespace api.Controllers
         // Param: "id" unique value of the recipe
         // Returns: recipe object
         [HttpGet("foods/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Recipe>> GetRecipeById(string id)
         {
@@ -91,7 +91,7 @@ namespace api.Controllers
         // Description: gets list of ten random drinks
         // Returns: list of recipes
         [HttpGet("drinks")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<List<Recipe>>> GetTenDrinks()
         {
@@ -120,6 +120,8 @@ namespace api.Controllers
         // Param: "id" unique value of the drink
         // Returns: drink object
         [HttpGet("drinks/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Recipe>> GetDrinksById(string id)
         {
             try
@@ -145,7 +147,7 @@ namespace api.Controllers
         // Description: gets a random diet
         // Returns: diet object
         [HttpGet("diet")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Diet))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Diet>> GetDiet()
         {

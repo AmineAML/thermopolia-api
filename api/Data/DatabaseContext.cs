@@ -9,6 +9,6 @@ namespace api.Data
         {
         }
 
-        public DbSet<EmailList> MyProperty { get; set; }
+        public DbSet<EmailList> EmailLists { get; set; }
     }
 }
