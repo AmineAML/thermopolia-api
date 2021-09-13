@@ -34,13 +34,13 @@ namespace api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api", Version = "v1" });
             });
-            services.AddHttpClient<IRecipesService, RecipesService>(c => 
+            services.AddHttpClient<IRecipesService, RecipesService>(c =>
             {
                 c.BaseAddress = new Uri($"https://api.edamam.com/api/recipes/");
 
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
-            services.AddHttpClient<IDrinksService, DrinksService>(c => 
+            services.AddHttpClient<IDrinksService, DrinksService>(c =>
             {
                 c.BaseAddress = new Uri($"https://api.edamam.com/api/recipes/");
 
@@ -53,6 +53,10 @@ namespace api
                                                         .EnableSensitiveDataLogging()
             );
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = $"{Configuration.GetValue<string>("Redis:Server")}:{Configuration.GetValue<int>("Redis:Port")}";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

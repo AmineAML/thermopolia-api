@@ -12,5 +12,9 @@
   },
   "ConnectionStrings": {
     "DatabaseContext": ""
+  },
+  "Redis": {
+    "Server": "localhost",
+    "Port": 6379
   }
 }
