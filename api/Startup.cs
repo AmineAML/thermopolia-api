@@ -53,6 +53,7 @@ namespace api
                                                         .EnableSensitiveDataLogging()
             );
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddScoped<ICacheService, CacheService>();
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = $"{Configuration.GetValue<string>("Redis:Server")}:{Configuration.GetValue<int>("Redis:Port")}";

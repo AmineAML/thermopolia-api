@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using api.Services;
 using api.Models;
 using Microsoft.AspNetCore.Http;
+using api.Abstractions;
 
 namespace api.Controllers
 {
@@ -24,12 +25,15 @@ namespace api.Controllers
 
         public readonly IDietService _dietService;
 
-        public RecipesController(ILogger<RecipesController> logger, IRecipesService recipesService, IDrinksService drinksService, IDietService dietService)
+        private readonly ICacheService _cache;
+
+        public RecipesController(ILogger<RecipesController> logger, IRecipesService recipesService, IDrinksService drinksService, IDietService dietService, ICacheService cache)
         {
             _logger = logger;
             _recipesService = recipesService;
             _drinksService = drinksService;
             _dietService = dietService;
+            _cache = cache;
         }
 
         // Description: gets list of ten random recipes
@@ -41,10 +45,13 @@ namespace api.Controllers
         {
             try
             {
-                var randomRecipes = _recipesService.GetTenRecipes();
+                List<Recipe> cached = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Recipes);
 
-                return Ok(await randomRecipes);
+                if (cached != null) return Ok(cached);
 
+                var randomRecipes = await _recipesService.GetTenRecipes();
+
+                return Ok(_cache.Set<List<Recipe>>(CacheKeys.Recipes, randomRecipes));
             }
             catch (HttpRequestException httpRequestException)
             {
@@ -97,9 +104,13 @@ namespace api.Controllers
         {
             try
             {
-                var drinks = _drinksService.GetTenDrinks();
+                List<Recipe> cached = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Drinks);
 
-                return Ok(await drinks);
+                if (cached != null) return Ok(cached);
+
+                var drinks = await _drinksService.GetTenDrinks();
+
+                return Ok(_cache.Set<List<Recipe>>(CacheKeys.Drinks, drinks));
 
             }
             catch (HttpRequestException httpRequestException)
@@ -153,9 +164,13 @@ namespace api.Controllers
         {
             try
             {
-                var diet = _dietService.GetDiet();
+                Diet cached = _cache.GetCachedDiet<Diet>(CacheKeys.Diet);
 
-                return Ok(await diet);
+                if (cached != null) return Ok(cached);
+
+                var diet = await _dietService.GetDiet();
+
+                return Ok(_cache.Set<Diet>(CacheKeys.Diet, diet));
             }
             catch (HttpRequestException httpRequestException)
             {

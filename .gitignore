@@ -5,6 +5,7 @@
 
 api/appsettings.Development.json
 example.json
+.env
 
 # User-specific files
 *.rsuser

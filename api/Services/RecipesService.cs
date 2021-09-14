@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -10,7 +11,7 @@ namespace api.Services
 {
     public interface IRecipesService
     {
-        Task<Recipe[]> GetTenRecipes();
+        Task<List<Recipe>> GetTenRecipes();
         Task<Recipe> GetRecipeById(string id);
     }
 
@@ -39,13 +40,13 @@ namespace api.Services
             _ingredientOfTheWeek = "tuna";
         }
 
-        public async Task<Recipe[]> GetTenRecipes()
+        public async Task<List<Recipe>> GetTenRecipes()
         {
             string APIURL = $"v2?type=public&q={_ingredientOfTheWeek}&app_id={_appId}&app_key={_appKey}&ingr=10&health=alcohol-free&health=pork-free&dishType=Main%20course&dishType=Salad&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&time=20&imageSize=REGULAR&random=true&field=uri&field=label&field=image&field=url&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=source";
 
             var res = await _httpClient.GetFromJsonAsync<RecipesSearchAPI>(APIURL);
 
-            var recipes = res.hits.Select(h => h.recipe).ToArray();
+            var recipes = res.hits.Select(h => h.recipe).ToList();//.ToArray();
 
             return recipes;
         }
