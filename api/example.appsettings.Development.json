@@ -16,5 +16,12 @@
   "Redis": {
     "Server": "localhost",
     "Port": 6379
+  },
+  "MailSettings": {
+    "Mail": "",
+    "DisplayName": "",
+    "Password": "",
+    "Host": "smtp.gmail.com",
+    "Port": 587
   }
 }

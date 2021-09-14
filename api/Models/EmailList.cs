@@ -14,5 +14,7 @@ namespace api.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        public bool IsVerified { get; set; }
     }
 }
