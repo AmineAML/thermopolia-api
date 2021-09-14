@@ -10,6 +10,7 @@ using api.Services;
 using api.Models;
 using Microsoft.AspNetCore.Http;
 using api.Abstractions;
+using api.Interfaces;
 
 namespace api.Controllers
 {

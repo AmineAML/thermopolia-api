@@ -7,14 +7,10 @@ using System.Linq;
 using System.IO;
 using System;
 using System.Text.Json;
+using api.Interfaces;
 
 namespace api.Services
 {
-    public interface IDietService
-    {
-        Task<Diet> GetDiet();
-    }
-
     public class DietService : IDietService
     {
         public DietsContent _diets;

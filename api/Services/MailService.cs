@@ -1,14 +1,11 @@
 using System.Threading.Tasks;
+using api.Interfaces;
 using api.Models;
 using Microsoft.Extensions.Options;
 
 namespace api.Services
 {
-    public interface IMailService
-    {
-        Task SendEmail(MailRequest mailRequest);
-    }
-    public class MailService
+    public class MailService/* : IMailService*/
     {
         private readonly MailSettings _mailSettings;
 

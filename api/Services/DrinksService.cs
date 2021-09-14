@@ -5,15 +5,10 @@ using api.Models;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Collections.Generic;
+using api.Interfaces;
 
 namespace api.Services
 {
-    public interface IDrinksService
-    {
-        Task<List<Recipe>> GetTenDrinks();
-        Task<Recipe> GetDrinkById(string id);
-    }
-
     public class DrinksService : IDrinksService
     {
         private HttpClient _httpClient;
@@ -32,9 +27,9 @@ namespace api.Services
 
             Configuration = configuration;
 
-            _appId = Configuration["RecipesSearchAPI:AppId"];
+            _appId = Configuration.GetValue<string>("RecipesSearchAPI:AppId");
 
-            _appKey = Configuration["RecipesSearchAPI:AppKey"];
+            _appKey = Configuration.GetValue<string>("RecipesSearchAPI:AppKey");
 
             _ingredientOfTheWeek = "orange";
         }

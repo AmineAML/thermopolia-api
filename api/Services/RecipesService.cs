@@ -4,17 +4,12 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using api.Interfaces;
 using api.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace api.Services
 {
-    public interface IRecipesService
-    {
-        Task<List<Recipe>> GetTenRecipes();
-        Task<Recipe> GetRecipeById(string id);
-    }
-
     public class RecipesService : IRecipesService
     {
         private HttpClient _httpClient;
@@ -33,9 +28,9 @@ namespace api.Services
 
             Configuration = configuration;
 
-            _appId = Configuration["RecipesSearchAPI:AppId"];
+            _appId = Configuration.GetValue<string>("RecipesSearchAPI:AppId");
 
-            _appKey = Configuration["RecipesSearchAPI:AppKey"];
+            _appKey = Configuration.GetValue<string>("RecipesSearchAPI:AppKey");
 
             _ingredientOfTheWeek = "tuna";
         }

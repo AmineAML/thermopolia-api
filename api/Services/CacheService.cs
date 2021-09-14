@@ -1,3 +1,4 @@
+using api.Interfaces;
 using api.Models;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
@@ -6,15 +7,6 @@ using System.Collections.Generic;
 
 namespace api.Services
 {
-    public interface ICacheService
-    {
-        List<Recipe> GetCachedRecipesOrDrinks<T>(string key);
-
-        Diet GetCachedDiet<T>(string key);
-
-        T Set<T>(string key, T value);
-    }
-
     public class CacheService : ICacheService
     {
         private readonly IDistributedCache _cache;
