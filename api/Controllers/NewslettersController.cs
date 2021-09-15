@@ -108,6 +108,7 @@ namespace api.Controllers
 
             try
             {
+                Console.WriteLine(email);
                 MailRequest model = new MailRequest
                 {
                     To = email,
