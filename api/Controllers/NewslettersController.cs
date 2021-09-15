@@ -11,6 +11,8 @@ using api.Models;
 using Microsoft.AspNetCore.Http;
 using api.Data;
 using Microsoft.EntityFrameworkCore;
+using FluentEmail.Core;
+using api.Interfaces;
 
 namespace api.Controllers
 {
@@ -22,10 +24,16 @@ namespace api.Controllers
 
         private readonly DatabaseContext _context;
 
-        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context)
+        private readonly IFluentEmail _singleEmail;
+
+        private readonly IMailService _mailService;
+
+        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, [FromServices] IFluentEmail singleEmail, IMailService mailService)
         {
             _logger = logger;
             _context = context;
+            _singleEmail = singleEmail;
+            _mailService = mailService;
         }
 
         // Description: save new suscription
@@ -72,14 +80,45 @@ namespace api.Controllers
                     return Ok(newsletterSubscribers);
                 }
 
-                    var newsletterSubscriber = await _context.EmailLists.FindAsync(id);
+                var newsletterSubscriber = await _context.EmailLists.FindAsync(id);
 
-                    if (newsletterSubscriber == null)
-                    {
-                        return NotFound();
-                    }
+                if (newsletterSubscriber == null)
+                {
+                    return NotFound();
+                }
 
-                    return Ok(newsletterSubscriber);
+                return Ok(newsletterSubscriber);
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
+            }
+        }
+
+        [HttpPost("email/{email}")]
+        public async Task<IActionResult> SendSingleEmail(string email)
+        {
+            // var email = _singleEmail
+            //     .To("test@test.test")
+            //     .Subject("Test email")
+            //     .Body("This is a single email");
+
+            // await email.SendAsync();
+
+            try
+            {
+                MailRequest model = new MailRequest
+                {
+                    To = email,
+                    Subject = "Welcome, confirm your email address",
+                    FullName = "Ree of reeeee"
+                };
+
+
+                await _mailService.SendEmail(model);
+
+                return Ok();
             }
             catch (HttpRequestException httpRequestException)
             {
