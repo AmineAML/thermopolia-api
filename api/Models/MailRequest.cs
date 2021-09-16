@@ -6,5 +6,6 @@ namespace api.Models
         public string To { get; set; }
         public string Subject { get; set; }
         public string FullName { get; set; }
+        public string Template { get; set; }
     }
 }

@@ -18,6 +18,8 @@ using api.Models;
 using api.Interfaces;
 using System.IO;
 using FluentEmail.MailKitSmtp;
+using Microsoft.Extensions.Localization;
+using MailKit.Net.Smtp;
 
 namespace api
 {
@@ -63,8 +65,11 @@ namespace api
                 options.Configuration = $"{Configuration.GetValue<string>("Redis:Server")}:{Configuration.GetValue<int>("Redis:Port")}";
             });
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
-            services.AddFluentEmail(Configuration.GetValue<string>("SMTP:User")).AddRazorRenderer(Directory.GetCurrentDirectory()).AddRazorRenderer(typeof(Startup)).AddMailKitSender(Configuration.GetSection("SMTP").Get<SmtpClientOptions>());
             services.AddScoped<IMailService, MailService>();
+            services.AddFluentEmail(Configuration.GetValue<string>("SMTP:User"), Configuration.GetValue<string>("SMTP:DisplayName"))
+                .AddRazorRenderer(Directory.GetCurrentDirectory())
+                .AddRazorRenderer(typeof(Startup))
+                .AddSmtpSender(Configuration.GetValue<string>("SMTP:Server"), Configuration.GetValue<int>("SMTP:Port"), Configuration.GetValue<string>("SMTP:User"), Configuration.GetValue<string>("SMTP:Password"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

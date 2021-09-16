@@ -1,15 +1,57 @@
 @{
-	<h1 style="color:blue; background-color: grey; font-size: 25px;">
-		Dear @Model.Name, welcome
-	</h1>
+	<div class="body"
+		style="background:#17171E;color:#FFF;font-family:-apple-system,system-ui,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;min-height:100%;width:100%;">
+		<div
+			style="color:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:none!important;line-height:0px!important;">
+			<img border="0" width="1" height="1"
+				src="http://track.useparcel.com/q/45AQPD2XCnDUdPPUyim9BA~~/AACD1gA~/RgRhcinRPVcDc3BjQgoALNGkj1-gVSSNUhltYXR0QHJlYWxseWdvb2RlbWFpbHMuY29tWAQAAAAA" />
+		</div>
+		<div class="container" role="article" aria-roledescription="email" aria-label="Welcome to Thermopolia" lang="en"
+			style="background:#17171E;color:#FFF;font-family:-apple-system,system-ui,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;min-height:100%;width:100%;font-size:16px;">
+
+			<!--[if true]>
+	<table role="presentation" width="100%" align="center" style="background:#17171E"><tr><td>
+	</td><td style="width:400px;padding:60px 30px;">
+	<![endif]-->
+			<div style="max-width:400px;margin:0 auto;padding:60px 30px;mso-padding-alt:0;"> <a class="logo"
+					href="http://localhost:5000">
+					<img src="https://static.vecteezy.com/ti/vecteur-libre/p1/338488-heureux-chef-vector-icon-vectoriel.jpg" height="30" width="30"></a>
+				<h1 style="margin:.67em 0;font-size:2em;line-height:1.25em;margin-top:0;"> Welcome, @Model.Name &#x1F44B;
+				</h1>
+				<p style="margin:1em 0;"> Click the button below to confirm your email address (upon confirming you would receive the daily newsletter mailed to your inbox). </p>
+				<div style="text-align:center;"> <a href="http://localhost:5000"
+						style="font-size:16px;background-color:#00A2EC;background:linear-gradient(0deg,rgb(0,162,236),rgb(21,173,243));text-decoration:none;padding:8px 50px;color:#fff;border-radius:3px;display:block;mso-padding-alt:0;text-underline-color:#00A2EC;">
+
+						<!--[if mso]><i style="letter-spacing:50px;mso-font-width:-100%;mso-text-raise:16px;">&nbsp;</i>
+	<![endif]--><span style="mso-text-raise:8pt;">Confirm your email</span>
+
+						<!--[if mso]><i style="letter-spacing:50px;mso-font-width:-100%">&nbsp;</i>
+	<![endif]-->
+					</a></div>
+				<p style="margin:1em 0;"> Or visit the following link in your browser: <br> <a href="#"
+						style="color:#C5C5C7;">http://localhost:5000</a></p>
+				<p class="small" style="margin:1em 0;font-size:0.875em;color:#C5C5C7;"> This link will expire in 10 minutes.
+				</p>
+				<hr style="border-width:0;background:#3B3A3F;color:#3B3A3F;height:1px;margin:20px 0;">
+				<p style="margin:1em 0;"> Thanks for signing up! We&apos;re really glad to have you here. Please feel free to
+					reach out any time if you have questions, suggestions, or just want to chat. </p>
+				<p style="margin:1em 0;"> Happy cooking, <br> Thermopolia team <br></p>
+			</div>
+
+			<!--[if true]>
+	</td></tr></table>
+	<![endif]-->
+		</div>
+
+	</div>
 
 	@* @if (Model.Items != null)
-	{
+		{
 		<ul>
-			@foreach (var item in Model.Items)
-			{
-				<li>@item.Name</li>
-			}
+		@foreach (var item in Model.Items)
+		{
+		<li>@item.Name</li>
+		}
 		</ul>
-	} *@
+		} *@
 }

@@ -24,15 +24,12 @@ namespace api.Controllers
 
         private readonly DatabaseContext _context;
 
-        private readonly IFluentEmail _singleEmail;
-
         private readonly IMailService _mailService;
 
-        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, [FromServices] IFluentEmail singleEmail, IMailService mailService)
+        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService)
         {
             _logger = logger;
             _context = context;
-            _singleEmail = singleEmail;
             _mailService = mailService;
         }
 
@@ -96,24 +93,17 @@ namespace api.Controllers
             }
         }
 
-        [HttpPost("email/{email}")]
-        public async Task<IActionResult> SendSingleEmail(string email)
+        public async Task<IActionResult> SendSingleEmail(string email, string fullName, string subject, string template)
         {
-            // var email = _singleEmail
-            //     .To("test@test.test")
-            //     .Subject("Test email")
-            //     .Body("This is a single email");
-
-            // await email.SendAsync();
-
             try
             {
                 Console.WriteLine(email);
                 MailRequest model = new MailRequest
                 {
                     To = email,
-                    Subject = "Welcome, confirm your email address",
-                    FullName = "Ree of reeeee"
+                    Subject = subject,
+                    FullName = fullName,
+                    Template = template
                 };
 
 
