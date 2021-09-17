@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using api.Interfaces;
+using api.Migrations;
 using api.Models;
 using FluentEmail.Core;
 using MailKit.Net.Smtp;
@@ -25,12 +26,12 @@ namespace api.Services
         public async Task SendEmail(MailRequest mailRequest)
         {
             Console.WriteLine(mailRequest.To);
-            var model = new { Name = mailRequest.FullName };
+            var model = new { Name = mailRequest.FullName, RandomString = mailRequest.RandomString };
 
             var email = _singleEmail
                 .To(mailRequest.To)
                 .Subject(mailRequest.Subject)
-                .UsingTemplateFromFile("Views/Templates/ConfirmEmail.cshtml", model);
+                .UsingTemplateFromFile(mailRequest.Template, model);
                 // .UsingTemplate(template, model);
 
             await email.SendAsync();

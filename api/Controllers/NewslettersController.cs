@@ -13,6 +13,8 @@ using api.Data;
 using Microsoft.EntityFrameworkCore;
 using FluentEmail.Core;
 using api.Interfaces;
+using api.Abstractions;
+using System.Linq;
 
 namespace api.Controllers
 {
@@ -43,9 +45,28 @@ namespace api.Controllers
         {
             _context.EmailLists.Add(emailList);
 
+            UrlToken randomString = new UrlToken
+            {
+                RandomGeneratedString = Guid.NewGuid().ToString(),
+                Subscriber = emailList.ID
+            };
+
+            _context.UrlTokens.Add(randomString);
+
             try
             {
                 await _context.SaveChangesAsync();
+
+                MailRequest model = new MailRequest
+                {
+                    To = emailList.Email,
+                    Subject = "Welcome, confirm your email address",
+                    FullName = emailList.FullName,
+                    Template = EmailTemplatesAbstractions.ConfirmEmail,
+                    RandomString = randomString.RandomGeneratedString
+                };
+
+                await _mailService.SendEmail(model);
 
                 return CreatedAtAction("GetEmailLists", new { id = emailList.ID }, emailList);
             }
@@ -93,21 +114,24 @@ namespace api.Controllers
             }
         }
 
-        public async Task<IActionResult> SendSingleEmail(string email, string fullName, string subject, string template)
+        [HttpGet("subscribers/email/validation/{token}")]
+        public async Task<IActionResult> SendSingleEmail(string token)
         {
             try
             {
-                Console.WriteLine(email);
-                MailRequest model = new MailRequest
-                {
-                    To = email,
-                    Subject = subject,
-                    FullName = fullName,
-                    Template = template
-                };
+                var validToken = _context.UrlTokens.Where(c => c.RandomGeneratedString == token).First();
 
+                if (validToken == null) return NotFound();
 
-                await _mailService.SendEmail(model);
+                var subscriber = await _context.EmailLists.FindAsync(validToken.Subscriber);
+
+                if (subscriber == null) return NotFound();
+
+                subscriber.IsVerified = true;
+
+                _context.UrlTokens.Remove(validToken);
+
+                await _context.SaveChangesAsync();
 
                 return Ok();
             }

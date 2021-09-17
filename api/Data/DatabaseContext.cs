@@ -10,5 +10,7 @@ namespace api.Data
         }
 
         public DbSet<EmailList> EmailLists { get; set; }
+
+        public DbSet<UrlToken> UrlTokens { get; set; }
     }
 }
