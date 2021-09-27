@@ -8,5 +8,6 @@ namespace api.Models
         public string FullName { get; set; }
         public string Template { get; set; }
         public string RandomString { get; set; }
+        public Newsletter Content { get; set; }
     }
 }

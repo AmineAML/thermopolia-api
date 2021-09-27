@@ -28,11 +28,14 @@ namespace api.Controllers
 
         private readonly IMailService _mailService;
 
-        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService)
+        private readonly ICacheService _cache;
+
+        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService, ICacheService cache)
         {
             _logger = logger;
             _context = context;
             _mailService = mailService;
+            _cache = cache;
         }
 
         // Description: save new suscription
@@ -45,16 +48,19 @@ namespace api.Controllers
         {
             _context.EmailLists.Add(emailList);
 
-            UrlToken randomString = new UrlToken
-            {
-                RandomGeneratedString = Guid.NewGuid().ToString(),
-                Subscriber = emailList.ID
-            };
-
-            _context.UrlTokens.Add(randomString);
-
             try
             {
+                await _context.SaveChangesAsync();
+
+                UrlToken randomString = new UrlToken
+                {
+                    // GUIDs are good for testing, better create a function for generating a random string (no package)
+                    RandomGeneratedString = Guid.NewGuid().ToString(),
+                    Subscriber = emailList.ID
+                };
+
+                _context.UrlTokens.Add(randomString);
+
                 await _context.SaveChangesAsync();
 
                 MailRequest model = new MailRequest
@@ -115,7 +121,7 @@ namespace api.Controllers
         }
 
         [HttpGet("subscribers/email/validation/{token}")]
-        public async Task<IActionResult> SendSingleEmail(string token)
+        public async Task<IActionResult> ConfirmEmailSubscription(string token)
         {
             try
             {
@@ -137,6 +143,53 @@ namespace api.Controllers
             }
             catch (HttpRequestException httpRequestException)
             {
+                Console.WriteLine(httpRequestException);
+                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
+            }
+        }
+
+        [HttpGet("subscribers/email/subscriptions")]
+        public async Task<IActionResult> SendDailyEmailSubscriptions()
+        {
+            Console.WriteLine("Sending emails to subscribers");
+
+            try
+            {
+                List<Recipe> cachedRecipes = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Recipes);
+
+                List<Recipe> cachedDrinks = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Drinks);
+
+                Diet cachedDiet = _cache.GetCachedDiet<Diet>(CacheKeys.Diet);
+
+                var content = new Newsletter
+                {
+                    food = cachedRecipes[0],
+                    drink = cachedDrinks[0],
+                    diet = cachedDiet
+                };
+                
+                List<EmailList> subscribers = _context.EmailLists.Where<EmailList>(e => e.IsVerified == true).ToList();
+
+                foreach (EmailList subscriber in subscribers)
+                {
+                    MailRequest model = new MailRequest
+                    {
+                        To = subscriber.Email,
+                        Subject = "Your daily list of recommendations",
+                        FullName = subscriber.FullName,
+                        Template = EmailTemplatesAbstractions.NewsletterEmail,
+                        Content = content
+                    };
+
+                    await _mailService.SendEmail(model);
+                }
+
+                Console.WriteLine("Emails sent");
+                return Ok();
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                Console.WriteLine("Email/emails not sent");
                 Console.WriteLine(httpRequestException);
                 return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
