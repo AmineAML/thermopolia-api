@@ -30,12 +30,21 @@ namespace api.Controllers
 
         private readonly ICacheService _cache;
 
-        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService, ICacheService cache)
+        public readonly IRecipesService _recipesService;
+
+        public readonly IDrinksService _drinksService;
+
+        public readonly IDietService _dietService;
+
+        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService, ICacheService cache, IRecipesService recipesService, IDrinksService drinksService, IDietService dietService)
         {
             _logger = logger;
             _context = context;
             _mailService = mailService;
             _cache = cache;
+            _recipesService = recipesService;
+            _drinksService = drinksService;
+            _dietService = dietService;
         }
 
         // Description: save new suscription
@@ -155,11 +164,11 @@ namespace api.Controllers
 
             try
             {
-                List<Recipe> cachedRecipes = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Recipes);
+                List<Recipe> cachedRecipes = await _recipesService.GetTenRecipes();
 
-                List<Recipe> cachedDrinks = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Drinks);
+                List<Recipe> cachedDrinks = await _drinksService.GetTenDrinks();
 
-                Diet cachedDiet = _cache.GetCachedDiet<Diet>(CacheKeys.Diet);
+                Diet cachedDiet = await _dietService.GetDiet();
 
                 var content = new Newsletter
                 {
@@ -167,7 +176,7 @@ namespace api.Controllers
                     drink = cachedDrinks[0],
                     diet = cachedDiet
                 };
-                
+
                 List<EmailList> subscribers = _context.EmailLists.Where<EmailList>(e => e.IsVerified == true).ToList();
 
                 foreach (EmailList subscriber in subscribers)

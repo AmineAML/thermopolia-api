@@ -46,10 +46,6 @@ namespace api.Controllers
         {
             try
             {
-                List<Recipe> cached = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Recipes);
-
-                if (cached != null) return Ok(cached);
-
                 var randomRecipes = await _recipesService.GetTenRecipes();
 
                 return Ok(_cache.Set<List<Recipe>>(CacheKeys.Recipes, randomRecipes));
@@ -105,10 +101,6 @@ namespace api.Controllers
         {
             try
             {
-                List<Recipe> cached = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Drinks);
-
-                if (cached != null) return Ok(cached);
-
                 var drinks = await _drinksService.GetTenDrinks();
 
                 return Ok(_cache.Set<List<Recipe>>(CacheKeys.Drinks, drinks));
@@ -165,10 +157,6 @@ namespace api.Controllers
         {
             try
             {
-                Diet cached = _cache.GetCachedDiet<Diet>(CacheKeys.Diet);
-
-                if (cached != null) return Ok(cached);
-
                 var diet = await _dietService.GetDiet();
 
                 return Ok(_cache.Set<Diet>(CacheKeys.Diet, diet));

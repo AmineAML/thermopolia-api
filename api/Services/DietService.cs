@@ -8,6 +8,7 @@ using System.IO;
 using System;
 using System.Text.Json;
 using api.Interfaces;
+using api.Abstractions;
 
 namespace api.Services
 {
@@ -19,13 +20,19 @@ namespace api.Services
 
         public Diet _diet;
 
-        public DietService()
+        private readonly ICacheService _cache;
+
+        public DietService(ICacheService cache)
         {
-            
+            _cache = cache;
         }
 
         public async Task<Diet> GetDiet()
         {
+            Diet cached = _cache.GetCachedDiet<Diet>(CacheKeys.Diet);
+
+            if (cached != null) return cached;
+
             string fileName = $"{Directory.GetCurrentDirectory()}/diets.json";
 
             using FileStream openStream = File.OpenRead(fileName);
