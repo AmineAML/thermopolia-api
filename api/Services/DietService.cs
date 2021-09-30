@@ -42,7 +42,7 @@ namespace api.Services
             // Diets JSON file is in work in progress that's why include valid diet objects
             var diets = _diets.diets.Where(d => d.description != "");
 
-            _diet = diets.Skip(_random.Next(_diets.diets.Length)).First();
+            _diet = diets.Skip(_random.Next(_diets.diets.Length)).FirstOrDefault();
 
             return _diet;
         }

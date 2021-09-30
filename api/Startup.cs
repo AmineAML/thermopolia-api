@@ -20,6 +20,8 @@ using System.IO;
 using FluentEmail.MailKitSmtp;
 using Microsoft.Extensions.Localization;
 using MailKit.Net.Smtp;
+using Hangfire;
+using Hangfire.PostgreSql;
 
 namespace api
 {
@@ -70,6 +72,9 @@ namespace api
                 .AddRazorRenderer(Directory.GetCurrentDirectory())
                 .AddRazorRenderer(typeof(Startup))
                 .AddSmtpSender(Configuration.GetValue<string>("SMTP:Server"), Configuration.GetValue<int>("SMTP:Port"), Configuration.GetValue<string>("SMTP:User"), Configuration.GetValue<string>("SMTP:Password"));
+            services.AddHangfire(config =>
+                config.UsePostgreSqlStorage(Configuration.GetConnectionString("DatabaseContext")));
+            services.AddHangfireServer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,6 +97,7 @@ namespace api
             {
                 endpoints.MapControllers();
             });
+            app.UseHangfireDashboard();
         }
     }
 }

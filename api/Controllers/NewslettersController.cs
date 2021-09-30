@@ -15,6 +15,7 @@ using FluentEmail.Core;
 using api.Interfaces;
 using api.Abstractions;
 using System.Linq;
+using Hangfire;
 
 namespace api.Controllers
 {
@@ -148,6 +149,8 @@ namespace api.Controllers
 
                 await _context.SaveChangesAsync();
 
+                await Newsletter(subscriber.Email);
+
                 return Ok();
             }
             catch (HttpRequestException httpRequestException)
@@ -190,7 +193,9 @@ namespace api.Controllers
                         Content = content
                     };
 
-                    await _mailService.SendEmail(model);
+                    // await _mailService.SendEmail(model);
+
+                    RecurringJob.AddOrUpdate(() => _mailService.SendEmail(model), Cron.Minutely);
                 }
 
                 Console.WriteLine("Emails sent");
@@ -202,6 +207,32 @@ namespace api.Controllers
                 Console.WriteLine(httpRequestException);
                 return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
             }
+        }
+
+        public async Task Newsletter(string email)
+        {
+            List<Recipe> cachedRecipes = await _recipesService.GetTenRecipes();
+
+            List<Recipe> cachedDrinks = await _drinksService.GetTenDrinks();
+
+            Diet cachedDiet = await _dietService.GetDiet();
+
+            var content = new Newsletter
+            {
+                food = cachedRecipes[0],
+                drink = cachedDrinks[0],
+                diet = cachedDiet
+            };
+
+            MailRequest model = new MailRequest
+            {
+                To = email,
+                Subject = "Your daily list of recommendations",
+                Template = EmailTemplatesAbstractions.NewsletterEmail,
+                Content = content
+            };
+
+            RecurringJob.AddOrUpdate($"{email} subscriber", () => _mailService.SendEmail(model), Cron.Minutely);
         }
     }
 }

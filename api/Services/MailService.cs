@@ -26,7 +26,7 @@ namespace api.Services
         public async Task SendEmail(MailRequest mailRequest)
         {
             Console.WriteLine(mailRequest.To);
-            var model = new { Name = mailRequest.FullName, RandomString = mailRequest.RandomString, food = mailRequest.Content.food, drink = mailRequest.Content.drink, diet = mailRequest.Content.diet };
+            var model = new { Name = mailRequest.FullName, RandomString = mailRequest.RandomString, food = mailRequest?.Content?.food, drink = mailRequest?.Content?.drink, diet = mailRequest?.Content?.diet };
 
             var email = _singleEmail
                 .To(mailRequest.To)
