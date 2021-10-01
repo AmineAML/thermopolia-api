@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace api.Models
@@ -15,6 +16,7 @@ namespace api.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        [DefaultValue(false)]
         public bool IsVerified { get; set; }
     }
 }

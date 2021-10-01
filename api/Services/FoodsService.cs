@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -11,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace api.Services
 {
-    public class RecipesService : IRecipesService
+    public class FoodsService : IFoodsService
     {
         private HttpClient _httpClient;
 
@@ -25,7 +24,7 @@ namespace api.Services
 
         private readonly ICacheService _cache;
 
-        public RecipesService(HttpClient httpClient, IConfiguration configuration, ICacheService cache)
+        public FoodsService(HttpClient httpClient, IConfiguration configuration, ICacheService cache)
         {
             _httpClient = httpClient;
 
@@ -40,7 +39,7 @@ namespace api.Services
             _cache = cache;
         }
 
-        public async Task<List<Recipe>> GetTenRecipes()
+        public async Task<List<Recipe>> GetTenFoods()
         {
             List<Recipe> cached = _cache.GetCachedRecipesOrDrinks<List<Recipe>>(CacheKeys.Recipes);
 
@@ -55,7 +54,7 @@ namespace api.Services
             return recipes;
         }
 
-        public async Task<Recipe> GetRecipeById(string id)
+        public async Task<Recipe> GetFoodById(string id)
         {
             string APIURL = $"v2/{id}?type=public&app_id={_appId}&app_key={_appKey}";
 

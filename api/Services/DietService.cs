@@ -1,8 +1,5 @@
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 using api.Models;
-using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.IO;
 using System;

@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System;
-using System.Collections;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using api.Services;
 using api.Models;
 using Microsoft.AspNetCore.Http;
 using api.Abstractions;
@@ -14,13 +11,14 @@ using api.Interfaces;
 
 namespace api.Controllers
 {
-    [ApiController]
+    [Produces("application/json")]
     [Route("api/v1/[Controller]")]
+    [ApiController]
     public class RecipesController : ControllerBase
     {
         private readonly ILogger<RecipesController> _logger;
 
-        public readonly IRecipesService _recipesService;
+        public readonly IFoodsService _foodsService;
 
         public readonly IDrinksService _drinksService;
 
@@ -28,25 +26,29 @@ namespace api.Controllers
 
         private readonly ICacheService _cache;
 
-        public RecipesController(ILogger<RecipesController> logger, IRecipesService recipesService, IDrinksService drinksService, IDietService dietService, ICacheService cache)
+        public RecipesController(ILogger<RecipesController> logger, IFoodsService foodsService, IDrinksService drinksService, IDietService dietService, ICacheService cache)
         {
             _logger = logger;
-            _recipesService = recipesService;
+            _foodsService = foodsService;
             _drinksService = drinksService;
             _dietService = dietService;
             _cache = cache;
         }
 
-        // Description: gets list of ten random recipes
-        // Returns: list of recipes
+        /// <summary>
+        /// Random 10 foods recipes
+        /// </summary>
+        /// <returns>A list of 10 random foods recipes</returns>
+        /// <response code="200">Returns the recipes list</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("foods")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Recipe>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<List<Recipe>>> GetTenRecipes()
+        public async Task<ActionResult<List<Recipe>>> GetTenFoods()
         {
             try
             {
-                var randomRecipes = await _recipesService.GetTenRecipes();
+                var randomRecipes = await _foodsService.GetTenFoods();
 
                 return Ok(_cache.Set<List<Recipe>>(CacheKeys.Recipes, randomRecipes));
             }
@@ -64,19 +66,21 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        // Description: gets a recipes by its id
-        // Param: "id" unique value of the recipe
-        // Returns: recipe object
+        /// <summary>
+        /// Food recipe by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A food recipe by id</returns>
+        /// <response code="200">Returns the requested food recipe</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("foods/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<Recipe>> GetRecipeById(string id)
+        public async Task<ActionResult<Recipe>> GetFoodById(string id)
         {
             try
             {
-                var recipe = _recipesService.GetRecipeById(id);
-
-                return Ok(await recipe);
+                return Ok(await _foodsService.GetFoodById(id));
             }
             catch (HttpRequestException httpRequestException)
             {
@@ -92,8 +96,12 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        // Description: gets list of ten random drinks
-        // Returns: list of recipes
+        /// <summary>
+        /// Random 10 drink recipes
+        /// </summary>
+        /// <returns>A list of 10 random drinks recipes</returns>
+        /// <response code="200">Returns the recipes list</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("drinks")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -120,9 +128,13 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        // Description: gets a drink by its id
-        // Param: "id" unique value of the drink
-        // Returns: drink object
+        /// <summary>
+        /// Drink recipe by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A drink recipe by id</returns>
+        /// <response code="200">Returns the requested drink recipe</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("drinks/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Recipe))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -130,9 +142,7 @@ namespace api.Controllers
         {
             try
             {
-                var drink = _drinksService.GetDrinkById(id);
-
-                return Ok(await drink);
+                return Ok(await _drinksService.GetDrinkById(id));
             }
             catch (HttpRequestException httpRequestException)
             {
@@ -148,8 +158,12 @@ namespace api.Controllers
             // var content = await res.Content
         }
 
-        // Description: gets a random diet
-        // Returns: diet object
+        /// <summary>
+        /// Random diet
+        /// </summary>
+        /// <returns>A diet</returns>
+        /// <response code="200">Returns a diet</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("diet")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Diet))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

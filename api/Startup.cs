@@ -1,13 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Data;
 using api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,9 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using api.Models;
 using api.Interfaces;
 using System.IO;
-using FluentEmail.MailKitSmtp;
-using Microsoft.Extensions.Localization;
-using MailKit.Net.Smtp;
 using Hangfire;
 using Hangfire.PostgreSql;
 
@@ -40,9 +32,9 @@ namespace api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Thermopolia API", Version = "V1" });
             });
-            services.AddHttpClient<IRecipesService, RecipesService>(c =>
+            services.AddHttpClient<IFoodsService, FoodsService>(c =>
             {
                 c.BaseAddress = new Uri($"https://api.edamam.com/api/recipes/");
 
@@ -84,7 +76,7 @@ namespace api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Thermopolia API V1"));
             }
 
             app.UseHttpsRedirection();
@@ -97,6 +89,7 @@ namespace api
             {
                 endpoints.MapControllers();
             });
+            // localhost:<port>/hangire
             app.UseHangfireDashboard();
         }
     }

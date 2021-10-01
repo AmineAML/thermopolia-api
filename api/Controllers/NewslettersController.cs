@@ -1,17 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System;
-using System.Collections;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using api.Services;
 using api.Models;
 using Microsoft.AspNetCore.Http;
 using api.Data;
 using Microsoft.EntityFrameworkCore;
-using FluentEmail.Core;
 using api.Interfaces;
 using api.Abstractions;
 using System.Linq;
@@ -19,8 +15,9 @@ using Hangfire;
 
 namespace api.Controllers
 {
-    [ApiController]
+    [Produces("application/json")]
     [Route("api/v1/[Controller]")]
+    [ApiController]
     public class NewslettersController : ControllerBase
     {
         private readonly ILogger<RecipesController> _logger;
@@ -29,31 +26,45 @@ namespace api.Controllers
 
         private readonly IMailService _mailService;
 
-        private readonly ICacheService _cache;
-
-        public readonly IRecipesService _recipesService;
+        public readonly IFoodsService _foodsService;
 
         public readonly IDrinksService _drinksService;
 
         public readonly IDietService _dietService;
 
-        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService, ICacheService cache, IRecipesService recipesService, IDrinksService drinksService, IDietService dietService)
+        public NewslettersController(ILogger<RecipesController> logger, DatabaseContext context, IMailService mailService, IFoodsService foodsService, IDrinksService drinksService, IDietService dietService)
         {
             _logger = logger;
             _context = context;
             _mailService = mailService;
-            _cache = cache;
-            _recipesService = recipesService;
+            _foodsService = foodsService;
             _drinksService = drinksService;
             _dietService = dietService;
         }
 
-        // Description: save new suscription
-        // Returns: request status
-        [HttpPost("subscribe")]
+        /// <summary>
+        /// Subcribe to the newsletter
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        /// Post /subscribers
+        /// {
+        ///      "FullName": "Martian Mars",
+        ///       // I don't own the solarsystem.space domain, I thought the name is cool and when I research it I've foudn that it was already bought
+        ///      "Email": "martian.mars@solarsystem.space"
+        /// }
+        /// 
+        /// </remarks>
+        /// <param name="emailList"></param>
+        /// <returns>New subscriber</returns>
+        /// <response code="200">Returns the recipes list</response>
+        /// <response code="409">If email is duplicate</response>
+        /// <response code="500">If there was an error</response>
+        [HttpPost("subscribers")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> addNewSubscription(EmailList emailList)
         {
             _context.EmailLists.Add(emailList);
@@ -97,21 +108,25 @@ namespace api.Controllers
             }
         }
 
-        // Description: gets an email list subscriber by id or the whole list
-        // Returns: subscriber object or an array
+        /// <summary>
+        /// Subscribers list or subscriber
+        /// </summary>
+        /// <param name="id" required="false"></param>
+        /// <returns>Subscribers' list or if id is provided then the requested subsriber</returns>
+        /// <response code="200">Returns the subscribers list or the subscriber by their id if it was provided</response>
+        /// <response code="404">If id not found</response>
+        /// <response code="500">If there was an error</response>
         [HttpGet("subscribers/{id?}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetEmailLists(int? id)
         {
             try
             {
                 if (id == null)
                 {
-                    var newsletterSubscribers = await _context.EmailLists.ToListAsync();
-
-                    return Ok(newsletterSubscribers);
+                    return Ok(await _context.EmailLists.ToListAsync());
                 }
 
                 var newsletterSubscriber = await _context.EmailLists.FindAsync(id);
@@ -130,7 +145,16 @@ namespace api.Controllers
             }
         }
 
-        [HttpGet("subscribers/email/validation/{token}")]
+        /// <summary>
+        /// Verify the subscriber's email
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns>Email verification status</returns>
+        /// <response code="200">Returns status of email verification</response>
+        /// <response code="500">If there was an error</response>
+        [HttpGet("subscribers/validation/{token}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ConfirmEmailSubscription(string token)
         {
             try
@@ -151,7 +175,7 @@ namespace api.Controllers
 
                 await Newsletter(subscriber.Email);
 
-                return Ok();
+                return Ok("Email verified!");
             }
             catch (HttpRequestException httpRequestException)
             {
@@ -160,58 +184,9 @@ namespace api.Controllers
             }
         }
 
-        [HttpGet("subscribers/email/subscriptions")]
-        public async Task<IActionResult> SendDailyEmailSubscriptions()
+        private async Task Newsletter(string email)
         {
-            Console.WriteLine("Sending emails to subscribers");
-
-            try
-            {
-                List<Recipe> cachedRecipes = await _recipesService.GetTenRecipes();
-
-                List<Recipe> cachedDrinks = await _drinksService.GetTenDrinks();
-
-                Diet cachedDiet = await _dietService.GetDiet();
-
-                var content = new Newsletter
-                {
-                    food = cachedRecipes[0],
-                    drink = cachedDrinks[0],
-                    diet = cachedDiet
-                };
-
-                List<EmailList> subscribers = _context.EmailLists.Where<EmailList>(e => e.IsVerified == true).ToList();
-
-                foreach (EmailList subscriber in subscribers)
-                {
-                    MailRequest model = new MailRequest
-                    {
-                        To = subscriber.Email,
-                        Subject = "Your daily list of recommendations",
-                        FullName = subscriber.FullName,
-                        Template = EmailTemplatesAbstractions.NewsletterEmail,
-                        Content = content
-                    };
-
-                    // await _mailService.SendEmail(model);
-
-                    RecurringJob.AddOrUpdate(() => _mailService.SendEmail(model), Cron.Minutely);
-                }
-
-                Console.WriteLine("Emails sent");
-                return Ok();
-            }
-            catch (HttpRequestException httpRequestException)
-            {
-                Console.WriteLine("Email/emails not sent");
-                Console.WriteLine(httpRequestException);
-                return StatusCode(StatusCodes.Status500InternalServerError, httpRequestException);
-            }
-        }
-
-        public async Task Newsletter(string email)
-        {
-            List<Recipe> cachedRecipes = await _recipesService.GetTenRecipes();
+            List<Recipe> cachedRecipes = await _foodsService.GetTenFoods();
 
             List<Recipe> cachedDrinks = await _drinksService.GetTenDrinks();
 
@@ -232,7 +207,7 @@ namespace api.Controllers
                 Content = content
             };
 
-            RecurringJob.AddOrUpdate($"{email} subscriber", () => _mailService.SendEmail(model), Cron.Minutely);
+            RecurringJob.AddOrUpdate($"{email} subscriber", () => _mailService.SendEmail(model), "0 0 * * *");
         }
     }
 }

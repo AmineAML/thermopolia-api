@@ -6,6 +6,7 @@
 api/appsettings.Development.json
 example.json
 .env
+README_DEV.md
 
 # User-specific files
 *.rsuser
