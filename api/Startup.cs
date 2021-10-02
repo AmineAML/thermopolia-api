@@ -89,8 +89,10 @@ namespace api
             {
                 endpoints.MapControllers();
             });
-            // localhost:<port>/hangire
+            // localhost:<port>/hangfire
             app.UseHangfireDashboard();
+
+            app.UseStaticFiles();
         }
     }
 }

@@ -6,101 +6,228 @@
 	},
 	"item": [
 		{
-			"name": "Random recipes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/Recipes/foods",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"Recipes",
-						"foods"
-					]
+			"name": "Newsletter",
+			"item": [
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FullName\": \"Ree\",\n    \"Email\": \"amin_aml@live.fr\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/Newsletters/subscribers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Newsletters",
+								"subscribers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribers list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Newsletters/subscribers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Newsletters",
+								"subscribers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscriber data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Newsletters/subscribers/id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Newsletters",
+								"subscribers",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email validation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/Newsletters/subscribers/validation/953760ef-4389-48df-af12-4611ed705a87",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Newsletters",
+								"subscribers",
+								"validation",
+								"953760ef-4389-48df-af12-4611ed705a87"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Recipe by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/Recipes/foods/recipe_04de2b57dfbdaeca0ff1b591c5102482",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"Recipes",
-						"foods",
-						"recipe_04de2b57dfbdaeca0ff1b591c5102482"
-					]
+			"name": "Foods",
+			"item": [
+				{
+					"name": "Random foods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Recipes/foods",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Recipes",
+								"foods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Food by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Recipes/foods/recipe_04de2b57dfbdaeca0ff1b591c5102482",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Recipes",
+								"foods",
+								"recipe_04de2b57dfbdaeca0ff1b591c5102482"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Random drinks",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/Recipes/drinks",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"Recipes",
-						"drinks"
-					]
+			"name": "Drinks",
+			"item": [
+				{
+					"name": "Random drinks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Recipes/drinks",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Recipes",
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drink by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Recipes/drinks/recipe_1d8d3f40b278fa3e49ed75eed79366e5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Recipes",
+								"drinks",
+								"recipe_1d8d3f40b278fa3e49ed75eed79366e5"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Drink by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/Recipes/drinks/recipe_1d8d3f40b278fa3e49ed75eed79366e5",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"Recipes",
-						"drinks",
-						"recipe_1d8d3f40b278fa3e49ed75eed79366e5"
-					]
+			"name": "Diets",
+			"item": [
+				{
+					"name": "Diet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/Recipes/diet",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"Recipes",
+								"diet"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Diet",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/Recipes/diet",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"Recipes",
-						"diet"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
