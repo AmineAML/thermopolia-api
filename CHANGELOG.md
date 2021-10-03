@@ -35,5 +35,5 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 
 
 
-[v0.6.0]: https://github.com/AmineAML/thermopolia-api/releases/tag/v0.5.0...v0.6.0
+[v0.6.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/AmineAML/thermopolia-api/releases/tag/v0.5.0
