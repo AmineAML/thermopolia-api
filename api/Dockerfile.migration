@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+
+RUN dotnet tool install --global dotnet-ef
+ENV PATH="${PATH}:/root/.dotnet/tools"
+
+WORKDIR /app
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . .
+
+ADD migration_script.sh  /
+
+RUN chmod +x /migration_script.sh
+
+CMD ["/migration_script.sh"]

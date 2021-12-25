@@ -159,7 +159,7 @@ namespace api.Controllers
         {
             try
             {
-                var validToken = _context.UrlTokens.Where(c => c.RandomGeneratedString == token).First();
+                var validToken = _context.UrlTokens.Where(c => c.RandomGeneratedString == token).FirstOrDefault();
 
                 if (validToken == null) return NotFound();
 

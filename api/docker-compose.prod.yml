@@ -1,0 +1,83 @@
+version: "3.8"
+
+services:
+  thermopolia_api:
+    image: thermopolia_api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - "pgsql_db_migration"
+    ports:
+      - "${API_PORT}:80"
+      # - "${API_PORT}:443"
+    environment:
+      RecipesSearchAPI__AppId: "5355c8c6"
+      RecipesSearchAPI__AppKey: "87b93675470db6d6569abab89d8748ab"
+      ConnectionStrings__DatabaseContext: "Host=thermopolia_postgres;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+      Redis__Server: "thermopolia_redis"
+      Redis__Port: ${REDIS_HOST_PORT}
+      MailSettings__Mail: ${THERMOPOLIA_EMAIL_PASSWORD}
+      MailSettings__DisplayName: ${THERMOPOLIA_EMAIL_DISPLAYNAME}
+      MailSettings__Password: ${THERMOPOLIA_EMAIL_PASSWORD}
+      MailSettings__Host: ${SMTP_HOST}
+      MailSettings__Port: ${SMTP_PORT}
+      SMTP__Server: ${SMTP_HOST}
+      SMTP__Port: ${SMTP_PORT}
+      SMTP__User: ${THERMOPOLIA_EMAIL}
+      SMTP__Password: ${THERMOPOLIA_EMAIL_PASSWORD}
+      # SMTP__UseSsl: true
+      # SMTP__RequiresAuthentication: true
+      SMTP__DisplayName: ${THERMOPOLIA_EMAIL_DISPLAYNAME}
+      Thermopolia__URL: ${THERMOPOLIA_APP_URL}
+      Thermopolia__ConfirmEmailUrl: ${THERMOPOLIA_APP_CONFIRM_EMAIL_URL}
+      Thermopolia__UnsubscribeFromNewsletter: ${THERMOPOLIA_APP_UNSUBSCRIBE_FROM_NEWSLETTER_URL}
+    networks:
+      - thermopolia_project
+
+  thermopolia_postgres:
+    image: postgres
+    restart: always
+    container_name: thermopolia_postgres
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_HOST_PORT}:5432"
+    volumes:
+      - thermopolia_pgdata:/var/lib/postgresql/data/
+    networks:
+      - thermopolia_project
+
+  thermopolia_redis:
+    image: redis
+    restart: always
+    container_name: thermopolia_redis
+    ports:
+      - "${REDIS_HOST_PORT}:6379"
+    volumes:
+      - thermopolia_redisdata:/data
+    networks:
+      - thermopolia_project
+
+  pgsql_db_migration:
+    image: thermopolia_api_migration:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.migration
+    depends_on:
+      - "thermopolia_postgres"
+      - "thermopolia_redis"
+    environment:
+      ConnectionStrings__DatabaseContext: "Host=thermopolia_postgres;Port=${POSTGRES_HOST_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+    networks:
+      - thermopolia_project
+
+volumes:
+  thermopolia_pgdata:
+  thermopolia_redisdata:
+         
+networks:
+  thermopolia_project:
+    external: true
