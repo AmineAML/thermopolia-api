@@ -209,5 +209,7 @@ namespace api.Controllers
 
             RecurringJob.AddOrUpdate($"{email} subscriber", () => _mailService.SendEmail(model), "0 0 * * *");
         }
+
+        // Unsubscribe from the newsletter
     }
 }

@@ -45,6 +45,10 @@ namespace api.Services
 
             if (cached != null) return cached;
 
+            // For the week days return recipes with a specific ingredient
+
+            // For the weekends days return recipes with a specific ingredient and from a specific cuisine
+
             string APIURL = $"v2?type=public&q={_ingredientOfTheWeek}&app_id={_appId}&app_key={_appKey}&ingr=10&health=alcohol-free&health=pork-free&dishType=Main%20course&dishType=Salad&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&time=20&imageSize=REGULAR&random=true&field=uri&field=label&field=image&field=url&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=source";
 
             var res = await _httpClient.GetFromJsonAsync<RecipesSearchAPI>(APIURL);
