@@ -9,6 +9,19 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 
 ## [Unreleased]
 
+## [v0.7.0] - 2021-12-29
+### Changed
+- Updated to .Net 6 [8d54935](https://github.com/AmineAML/thermopolia-api/commit/47889dfae458565822195d981810aa132cf71e9c) [0a98bb1](https://github.com/AmineAML/thermopolia-api/commit/134e5ff694411a3d749911eb581dda303bd35edb)
+- Enable CORS [134e5ff](https://github.com/AmineAML/thermopolia-api/commit/4195a8bc12ea751aa861d46fd563e86c8898bdb9)
+- Change the newsletter templates' logo [bcfa3e2](https://github.com/AmineAML/thermopolia-api/commit/bcc846e17443bfd4aa88882c1bc49bda14188ceb)
+
+### Fixed
+- A diet in the diets json file used a wrong link for its image url [134e5ff](https://github.com/AmineAML/thermopolia-api/commit/4195a8bc12ea751aa861d46fd563e86c8898bdb9)
+- Drinks route was returning foods recipes because 'drinks' is not used as a value for `dishType` parameter [4195a8b](https://github.com/AmineAML/thermopolia-api/commit/1cd3575fa18b7d5e1665275157f7630822d26aee)
+
+### Added
+- Add `Dockerfile`, `Dockerfile.migration` and `docker-compose.prod.yml` for production with an update for configuration and environment variables with updates to the newsletter service and templates [1cd3575](https://github.com/AmineAML/thermopolia-api/commit/bcfa3e2c561862b7ecbc98daece604b09006f24d)
+
 ## [v0.6.0] - 2021-10-02
 ### Added
 - Added documentation for the recipes routes [b48a518](https://github.com/AmineAML/thermopolia-api/commit/b48a518fcca6aac9041aeffa64f09a916a251560)
@@ -35,5 +48,6 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 
 
 
+[v0.6.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/AmineAML/thermopolia-api/releases/tag/v0.5.0
