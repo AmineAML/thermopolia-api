@@ -30,6 +30,10 @@ GET|/Recipes/foods/:id|Recipe by its id
 GET|/Recipes/drinks|List then random drinks
 GET|/Recipes/drinks/:id|Drink by its id
 GET|/Recipes/diet|Diet randomly
+POST|/Newsletters/subscribers|Subscribe to the newsletter
+GET|/Newsletters/subscribers|Subscribe to the newsletter
+GET|/Newsletters/subscribers/:id|Subscriber by id
+GET|/Newsletters/subscribers/validation/:token|Confirm email by unique token of the subscriber
 
 ## Architecture Diagram
 ![Thermopolia Architecture](./docs/diagrams/architecture.svg)   

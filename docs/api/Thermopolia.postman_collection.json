@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"FullName\": \"Ree\",\n    \"Email\": \"amin_aml@live.fr\"\n}",
+							"raw": "{\n    \"FullName\": \"Reeeeeeeeeeeeeeee\",\n    \"Email\": \"amin_aml@live.fr\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,11 +23,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/api/v1/Newsletters/subscribers",
+							"raw": "https://localhost:5001/api/v1/Newsletters/subscribers",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "5001",
 							"path": [
 								"api",
 								"v1",
