@@ -49,7 +49,7 @@ C4 Model Diagram
 
 ### Requirements
 
-This project is built using [Visual Studio Code](https://code.visualstudio.com/), the [Omnisharp](https://code.visualstudio.com/) extension, the [.Net 6.0](https://code.visualstudio.com/) with both the SDK and the Runtime, [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/).
+This project is built using [Visual Studio Code](https://code.visualstudio.com/), the [Omnisharp](https://github.com/OmniSharp/omnisharp-vscode) extension, the [.Net 6.0](https://dotnet.microsoft.com/en-us/) with both the SDK and the Runtime, [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/).
 
 ### Developing
 Rename `example.appsettings.Development.json` into `appsettings.Development.json` and add your environment variables.
