@@ -1,0 +1,50 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:   
+        
+  build:
+  
+    runs-on: [ self-hosted ]
+    
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Create env file
+      run: |
+        cd api
+        touch .env
+        echo POSTGRES_DB=${{ secrets.POSTGRES_DB }} >> .env
+        echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+        echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+        echo POSTGRES_HOST_PORT=${{ secrets.POSTGRES_HOST_PORT }} >> .env
+        echo REDIS_HOST_PORT=${{ secrets.REDIS_HOST_PORT }} >> .env
+        echo THERMOPOLIA_EMAIL=${{ secrets.THERMOPOLIA_EMAIL }} >> .env
+        echo THERMOPOLIA_EMAIL_PASSWORD=${{ secrets.THERMOPOLIA_EMAIL_PASSWORD }} >> .env
+        echo THERMOPOLIA_EMAIL_DISPLAYNAME=${{ secrets.THERMOPOLIA_EMAIL_DISPLAYNAME }} >> .env
+        echo SMTP_HOST=${{ secrets.SMTP_HOST }} >> .env
+        echo SMTP_PORT=${{ secrets.SMTP_PORT }} >> .env
+        echo THERMOPOLIA_APP_URL=${{ secrets.THERMOPOLIA_APP_URL }} >> .env
+        echo THERMOPOLIA_APP_CONFIRM_EMAIL_URL=${{ secrets.THERMOPOLIA_APP_CONFIRM_EMAIL_URL }} >> .env
+        echo THERMOPOLIA_APP_UNSUBSCRIBE_FROM_NEWSLETTER_URL=${{ secrets.THERMOPOLIA_APP_UNSUBSCRIBE_FROM_NEWSLETTER_URL }} >> .env
+        echo API_PORT=${{ secrets.API_PORT }} >> .env
+        cat .env
+    - name: Run script
+      working-directory: ./api
+      run: docker-compose -f docker-compose.prod.yml up -d  --build --force-recreate && docker system prune -a -f && docker volume prune -f
