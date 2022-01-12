@@ -44,5 +44,6 @@ jobs:
         echo THERMOPOLIA_APP_UNSUBSCRIBE_FROM_NEWSLETTER_URL=${{ secrets.THERMOPOLIA_APP_UNSUBSCRIBE_FROM_NEWSLETTER_URL }} >> .env
         echo API_PORT=${{ secrets.API_PORT }} >> .env
         cat .env
-    - run: cd api
-    - run: docker-compose -f docker-compose.prod.yml up -d  --build --force-recreate && docker system prune -a -f && docker volume prune -f
+    - name: Run script
+      working-directory: ./api
+      run: docker-compose -f docker-compose.prod.yml up -d  --build --force-recreate && docker system prune -a -f && docker volume prune -f
