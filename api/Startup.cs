@@ -73,7 +73,7 @@ namespace api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());//.WithOrigins(Configuration.GetValue<string>("Thermopolia:URL")));
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins(Configuration.GetValue<string>("Thermopolia:URL")));
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

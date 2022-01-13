@@ -16,7 +16,7 @@ services:
       RecipesSearchAPI__AppKey: "87b93675470db6d6569abab89d8748ab"
       ConnectionStrings__DatabaseContext: "Host=thermopolia_postgres;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
       Redis__Server: "thermopolia_redis"
-      Redis__Port: ${REDIS_HOST_PORT}
+      Redis__Port: "6379"
       MailSettings__Mail: ${THERMOPOLIA_EMAIL_PASSWORD}
       MailSettings__DisplayName: ${THERMOPOLIA_EMAIL_DISPLAYNAME}
       MailSettings__Password: ${THERMOPOLIA_EMAIL_PASSWORD}
