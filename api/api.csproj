@@ -4,6 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <PreserveCompilationContext>true</PreserveCompilationContext>
+    <!-- The following includes the Views folder -->
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +19,7 @@
     <PackageReference Include="Hangfire.Postgresql" Version="1.8.6" />
     <PackageReference Include="MailKit" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
