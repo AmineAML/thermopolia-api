@@ -70,7 +70,7 @@ services:
       - "thermopolia_postgres"
       - "thermopolia_redis"
     environment:
-      ConnectionStrings__DatabaseContext: "Host=thermopolia_postgres;Port=${POSTGRES_HOST_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+      ConnectionStrings__DatabaseContext: "Host=thermopolia_postgres;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
     networks:
       - thermopolia_project
 
