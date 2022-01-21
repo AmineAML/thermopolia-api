@@ -20,6 +20,8 @@ namespace api.Services
 
         private string _thermopoliaUnsubscribeFromNewsletter;
 
+        private string _thermopoliaEmail;
+
         public IConfiguration Configuration { get; }
 
         public MailService(IOptions<MailSettings> mailSettings, IFluentEmail singleEmail, IConfiguration configuration)
@@ -30,6 +32,7 @@ namespace api.Services
             _thermopoliaUrl = Configuration.GetValue<string>("Thermopolia:URL");
             _thermopoliaEmailConfirmationUrl = Configuration.GetValue<string>("Thermopolia:ConfirmEmailUrl");
             _thermopoliaUnsubscribeFromNewsletter = Configuration.GetValue<string>("Thermopolia:UnsubscribeFromNewsletter");
+            _thermopoliaEmail = configuration.GetValue<string>("SMTP:User");
         }
 
         public async Task SendEmail(MailRequest mailRequest)
@@ -43,7 +46,7 @@ namespace api.Services
                 diet = mailRequest?.Content?.diet,
                 thermopoliaUrl = _thermopoliaUrl,
                 thermopoliaEmailConfirmationUrl = _thermopoliaEmailConfirmationUrl,
-                thermopoliaNewsletterEmail = "newsletter@" + _thermopoliaUrl,
+                thermopoliaNewsletterEmail = _thermopoliaEmail,
                 // example for url to unsubscribe from the Thermopolia url
                 thermopoliaUnsubscribeFromNewsletter = _thermopoliaUnsubscribeFromNewsletter + "/example"
             };

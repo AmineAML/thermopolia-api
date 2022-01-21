@@ -30,7 +30,9 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddControllers();
+            services.AddControllers(options => {
+                options.Filters.Add(new RestrictDomainAttribute(Configuration.GetValue<string>("Thermopolia:URL")));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Thermopolia API", Version = "V1" });
