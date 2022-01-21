@@ -13,7 +13,9 @@ public class RestrictDomainAttribute : Attribute, IAuthorizationFilter
     public void OnAuthorization(AuthorizationFilterContext context)
     {
         // Get host from the request and check if it's in the enumeration of allowed hosts
-        string host = context.HttpContext.Request.Host.Host;
+        string host = context.HttpContext.Request.Headers["Origin"];
+        Console.WriteLine(host);
+        AllowedHosts.ToList().ForEach(host => Console.WriteLine(host));
         if (!AllowedHosts.Contains(host, StringComparer.OrdinalIgnoreCase))
         {
             // Request came from an authorized host, return bad request
