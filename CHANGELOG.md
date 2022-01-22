@@ -9,6 +9,20 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 
 ## [Unreleased]
 
+## [v0.8.0] - 2022-01-22
+### Fixed
+- Readme file referenced wrong urls [cd89b9b](https://github.com/AmineAML/thermopolia-api/commit/cb315faab589232e653a4218cce29340542ae2d9)
+- Migration Docker container wasn't connecting the the PostgreSQL Docker container because we were using the machine's binded port [ab80b6e](https://github.com/AmineAML/thermopolia-api/commit/c9d8cb93197821dc064f4d9ad58649e986fde90e)
+- Views folder not published [c9d8cb9](https://github.com/AmineAML/thermopolia-api/commit/7d1f41af5fed37f144265fd2e0a62ea3a91d68ee)
+- Wrong email address on the newsletter template [ 7d1f41a](https://github.com/AmineAML/thermopolia-api/commit/76c8465441cd38fa743a1a0ab430f9a017cbbbac)
+
+### Added
+- GitHub Actions pipeline for production [cb315fa](https://github.com/AmineAML/thermopolia-api/commit/3f744ebb33caee67f31ba78c96fae63f1bd4d25b)
+- Filter to block access from clients that are not allowed [7d1f41a](https://github.com/AmineAML/thermopolia-api/commit/76c8465441cd38fa743a1a0ab430f9a017cbbbac)
+
+### Changed
+- Redis port on docker compose production file was preventing the API from connecting because we were using the port binded to the machine while connecting from the a Docker container to another [49adbd7](https://github.com/AmineAML/thermopolia-api/commit/ab80b6efa3df5f5a364cd616fe1494a6a7c0254c)
+
 ## [v0.7.0] - 2021-12-29
 ### Changed
 - Updated to .Net 6 [8d54935](https://github.com/AmineAML/thermopolia-api/commit/47889dfae458565822195d981810aa132cf71e9c) [0a98bb1](https://github.com/AmineAML/thermopolia-api/commit/134e5ff694411a3d749911eb581dda303bd35edb)
@@ -48,6 +62,7 @@ and inspired from the [Angular Changelog](https://github.com/angular/angular/blo
 
 
 
-[v0.6.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.6.0...v0.7.0
+[v0.8.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.7.0...v0.8.0
+[v0.7.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/AmineAML/thermopolia-api/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/AmineAML/thermopolia-api/releases/tag/v0.5.0
