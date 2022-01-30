@@ -186,6 +186,12 @@ namespace api.Controllers
 
         private async Task Newsletter(string email)
         {
+            RecurringJob.AddOrUpdate($"{email} subscriber", () => this.GenerateEmail(email), "*/5 * * * *");
+            return;
+        }
+
+        public async Task GenerateEmail(string email)
+        {
             List<Recipe> cachedRecipes = await _foodsService.GetTenFoods();
 
             List<Recipe> cachedDrinks = await _drinksService.GetTenDrinks();
@@ -207,7 +213,7 @@ namespace api.Controllers
                 Content = content
             };
 
-            RecurringJob.AddOrUpdate($"{email} subscriber", () => _mailService.SendEmail(model), "0 0 * * *");
+            await _mailService.SendEmail(model);
         }
 
         // Unsubscribe from the newsletter
