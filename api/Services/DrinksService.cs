@@ -34,7 +34,7 @@ namespace api.Services
 
             _appKey = Configuration.GetValue<string>("RecipesSearchAPI:AppKey");
 
-            _ingredientOfTheWeek = "orange";
+            _ingredientOfTheWeek = "strawberry";
 
             _cache = cache;
         }
