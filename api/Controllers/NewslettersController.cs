@@ -186,7 +186,7 @@ namespace api.Controllers
 
         private async Task Newsletter(string email)
         {
-            RecurringJob.AddOrUpdate($"{email} subscriber", () => this.GenerateEmail(email), "*/5 * * * *");
+            RecurringJob.AddOrUpdate($"{email} subscriber", () => this.GenerateEmail(email), "0 0 * * *");
             return;
         }
 
